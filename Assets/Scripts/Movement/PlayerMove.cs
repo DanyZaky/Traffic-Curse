@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    private bool isRunning;
+    public bool isRunning;
 
     public Rigidbody2D rb;
     public Animator anim;
@@ -27,20 +27,24 @@ public class PlayerMove : MonoBehaviour
             Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || 
             Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            anim.SetBool("isRunning", true);
             isRunning = true;
         }
 
-        if (isRunning == true)
-        {
-            if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) ||
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) ||
             Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D) ||
             Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) ||
             Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
-            {
-                anim.SetBool("isRunning", false);
-                isRunning = false;
-            }
+        {
+            isRunning = false;
+        }
+
+        if(isRunning == true)
+        {
+            anim.SetBool("isRunning", true);
+        }
+        if(isRunning == false)
+        {
+            anim.SetBool("isRunning", false);
         }
     }
 

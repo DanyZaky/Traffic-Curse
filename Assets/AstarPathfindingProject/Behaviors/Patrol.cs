@@ -27,9 +27,18 @@ namespace Pathfinding {
 		IAstarAI agent;
 		float switchTime = float.PositiveInfinity;
 
-		protected override void Awake () {
+        private void Start()
+        {
+			for (int i = 0; i < 71; i++)
+			{
+				targets[i] = GameObject.Find("Patrol Points (" + (i + 1) + ")").GetComponent<Transform>();
+			}
+		}
+
+        protected override void Awake () {
 			base.Awake();
 			agent = GetComponent<IAstarAI>();
+			index = Random.Range(0, targets.Length);
 		}
 
 		/// <summary>Update is called once per frame</summary>

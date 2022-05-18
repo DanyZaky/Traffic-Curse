@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: d1e99c2134e6d2444ad9df4b54eff4d7
+guid: 9d980186373a498418ca81b2850bfbaa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3060290478036419209
-    second: Group of 16 Objects_0
+      213: 7657420189145379758
+    second: Group of 9 Objects_0
   - first:
-      213: -5428814258924168893
-    second: Group of 16 Objects_1
+      213: -5711636375419172567
+    second: Group of 9 Objects_1
   - first:
-      213: 4315763870618305586
-    second: Group of 16 Objects_2
+      213: -1533227416508406053
+    second: Group of 9 Objects_2
   - first:
-      213: 6192533376625735741
-    second: Group of 16 Objects_3
+      213: 7382510734948676386
+    second: Group of 9 Objects_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,85 +127,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Group of 16 Objects_0
+      name: Group of 9 Objects_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 68
-        width: 42
-        height: 69
+        x: 61
+        y: 184
+        width: 221
+        height: 133
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9820fd4c9f5587a20800000000000000
-      internalID: 3060290478036419209
+      spriteID: ea33aed571f944a60800000000000000
+      internalID: 7657420189145379758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Group of 16 Objects_1
+      name: Group of 9 Objects_1
       rect:
         serializedVersion: 2
-        x: 83
-        y: 70
-        width: 55
-        height: 76
-      alignment: 9
-      pivot: {x: 0.42016393, y: 0.43580446}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 349df31d13af8a4b0800000000000000
-      internalID: -5428814258924168893
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Group of 16 Objects_2
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 22
-        width: 24
-        height: 20
+        x: 101
+        y: 123
+        width: 43
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2344baadf5ca4eb30800000000000000
-      internalID: 4315763870618305586
+      spriteID: 929c0f46af03cb0b0800000000000000
+      internalID: -5711636375419172567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Group of 16 Objects_3
+      name: Group of 9 Objects_2
       rect:
         serializedVersion: 2
-        x: 84
-        y: 0
-        width: 66
-        height: 67
-      alignment: 9
-      pivot: {x: 0.45195055, y: 0.50581634}
+        x: 185
+        y: 109
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d38f68deb4c40f550800000000000000
-      internalID: 6192533376625735741
+      spriteID: bd6602fb9c1e8bae0800000000000000
+      internalID: -1533227416508406053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Group of 9 Objects_3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1
+        width: 332
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223bf133662f37660800000000000000
+      internalID: 7382510734948676386
       vertices: []
       indices: 
       edges: []
