@@ -22,30 +22,26 @@ public class PlayerMove : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || 
-            Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || 
-            Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || 
-            Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            isRunning = true;
-        }
-
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) ||
-            Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D) ||
-            Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) ||
-            Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            isRunning = false;
-        }
-
-        if(isRunning == true)
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || 
+            Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || 
+            Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || 
+            Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
             anim.SetBool("isRunning", true);
         }
-        if(isRunning == false)
+        else
         {
             anim.SetBool("isRunning", false);
         }
+
+        //if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) ||
+        //    Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D) ||
+        //    Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) ||
+        //    Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        //{
+        //    isRunning = false;
+        //}
+
     }
 
     void FixedUpdate()

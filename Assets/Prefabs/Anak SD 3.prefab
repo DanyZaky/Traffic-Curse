@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8304112599493421623}
   m_Layer: 0
   m_Name: Anak SD 3
-  m_TagString: Untagged
+  m_TagString: Grab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -233,7 +233,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  delay: 1
+  delay: 5
 --- !u!58 &8304112599493421623
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -318,9 +318,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: -1093874793
+  m_SortingLayer: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 6192533376625735741, guid: d1e99c2134e6d2444ad9df4b54eff4d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -401,9 +401,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -1093874793
+  m_SortingLayer: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 4315763870618305586, guid: d1e99c2134e6d2444ad9df4b54eff4d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -483,9 +483,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1093874793
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 5128064247420309890, guid: 3377d1a28ab867c488fff588e3e41f51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

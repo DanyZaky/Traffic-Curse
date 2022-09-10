@@ -5,22 +5,42 @@ using UnityEngine;
 public class Spawning : MonoBehaviour
 {
     public GameObject[] anakSD;
+    public GameObject Mobil, Mobil2;
 
-    public float spawnDelay, spawnDelayCounter;
+    public float spawnDelayAnak, spawnDelayMobil1, spawnDelayMobil2;
+    private float spawnDelayAnakCounter, spawnDelayMobil1Counter, spawnDelayMobil2Counter;
 
     void Start()
     {
-        spawnDelayCounter = spawnDelay;
+        spawnDelayAnakCounter = 0;
+        spawnDelayMobil1Counter = spawnDelayMobil1;
+        spawnDelayMobil2Counter = spawnDelayMobil2/2;
     }
 
     void Update()
     {
-        spawnDelayCounter -= 1f * Time.deltaTime;
+        spawnDelayAnakCounter -= 1f * Time.deltaTime;
 
-        if(spawnDelayCounter < 0)
+        if(spawnDelayAnakCounter < 0)
         {
             Instantiate(anakSD[Random.Range(0, anakSD.Length)], new Vector3(-0.77f, -10.48f, 0), Quaternion.identity);
-            spawnDelayCounter = spawnDelay;
+            spawnDelayAnakCounter = spawnDelayAnak;
+        }
+
+        spawnDelayMobil1Counter -= 1f * Time.deltaTime;
+
+        if(spawnDelayMobil1Counter < 0)
+        {
+            Instantiate(Mobil, new Vector3(-16.76f, 1.046598f, 0), Quaternion.identity);
+            spawnDelayMobil1Counter = spawnDelayMobil1;
+        }
+
+        spawnDelayMobil2Counter -= 1f * Time.deltaTime;
+
+        if (spawnDelayMobil2Counter < 0)
+        {
+            Instantiate(Mobil2, new Vector3(16.76f, -1.16883f, 0), Quaternion.identity);
+            spawnDelayMobil2Counter = spawnDelayMobil2;
         }
     }
 }
