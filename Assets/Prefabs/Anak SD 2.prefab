@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8304112599493421619}
   - component: {fileID: 8304112599493421620}
   - component: {fileID: 8304112599493421621}
-  - component: {fileID: 8304112599493421623}
-  m_Layer: 0
+  - component: {fileID: 1263971635036013836}
+  m_Layer: 8
   m_Name: Anak SD 2
   m_TagString: Grab
   m_Icon: {fileID: 0}
@@ -234,8 +234,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   delay: 5
---- !u!58 &8304112599493421623
-CircleCollider2D:
+--- !u!70 &1263971635036013836
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -247,9 +247,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: 0.028395055, y: 0.34074035}
+  m_Size: {x: 0.577441, y: 1.1239047}
+  m_Direction: 0
 --- !u!1 &8304112600346205465
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8304112600346205464}
   - component: {fileID: 8304112600346205463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8304112601264162456}
   - component: {fileID: 8304112601264162455}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8304112601273638686}
   - component: {fileID: 8304112601273638685}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shadows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
