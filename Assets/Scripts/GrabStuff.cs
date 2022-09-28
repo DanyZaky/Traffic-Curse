@@ -9,7 +9,7 @@ public class GrabStuff : MonoBehaviour
     public GameObject[] anakSD;
     public LayerMask childLayerMask;
 
-    public bool isChildNearby, isGrabbing, isActivate, isNotNull, isArrayFull;
+    public bool isChildNearby, isGrabbing;
     public float cd;
     public float radius;
 
