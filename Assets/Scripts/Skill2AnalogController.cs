@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Skill2AnalogController : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
+public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
     public FixedJoystick joystick;
+    public List<Collider2D> allTargetAllWithinArea;
     public GameObject visualCircleRadius;
     public Transform visualRangeArea;
     public Transform player;
-
+    
     public float range;
 
     private void Awake()
@@ -33,18 +34,32 @@ public class Skill2AnalogController : MonoBehaviour, IDragHandler, IPointerUpHan
         
     }
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        print("oke");
-    }
-
     public void OnPointerDown(PointerEventData eventData)
     {
         visualCircleRadius.SetActive(true);
+        PlayerSkillManager.Instance.OpenSkillCancelButton();
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        if (!PlayerSkillManager.Instance.isAbilityCanceled)
+        {
+            InitiateSkill2Effects();
+        }
+        else
+        {
+            print("Skill Canceled");
+        }
+        
         visualCircleRadius.SetActive(false);
+        PlayerSkillManager.Instance.CloseSkillCancelButton();
+    }
+
+    private void InitiateSkill2Effects()
+    {
+        foreach (var item in allTargetAllWithinArea)
+        {
+            item.gameObject.AddComponent<Skill2Effect>();
+        }
     }
 }
