@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
+using System;
 
 namespace MG.ChessMaze
 {
@@ -53,6 +54,18 @@ namespace MG.ChessMaze
             return cellGrid[(int)y, (int)x].IsTaken; 
         }
 
+        public int CalculateIndexFromCoordinates(int x, int y)
+        {
+            return x + y * width;
+        }
+
+        public Vector3 CalculateIndexFromCoordinates(int randomIndex)
+        {
+            int x = randomIndex % width;
+            int y = randomIndex / width;
+            return new Vector3(x, y, 0);
+        }
+
         public bool IsCellValid(float x, float y)
         {
             if (x >= width || x < 0 || y >= length || y < 0)
@@ -74,11 +87,6 @@ namespace MG.ChessMaze
         public Cell GetCell(float x, float y)
         {
             return GetCell((int)x, (int)y);
-        }
-
-        public int CalculateIndexFromCoordinates(int x, int y)
-        {
-            return x + y * width;
         }
 
         public int CalculateIndexFromCoordinates(float x, float y)
