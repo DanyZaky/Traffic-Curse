@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
@@ -10,8 +11,8 @@ public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     public GameObject visualCircleRadius;
     public Transform visualRangeArea;
     public Transform player;
-    
-    public float range;
+    public Image cooldownImg;
+    public float cd, currentCd;
 
     private void Awake()
     {
@@ -31,17 +32,30 @@ public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
             }
         }
 
-        
+        if (currentCd > 0)
+        {
+            currentCd -= Time.deltaTime;
+            cooldownImg.fillAmount = 1 - (currentCd / cd);
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        visualCircleRadius.SetActive(true);
-        PlayerSkillManager.Instance.OpenSkillCancelButton();
+        if (currentCd <= 0)
+        {
+            visualCircleRadius.SetActive(true);
+            PlayerSkillManager.Instance.OpenSkillCancelButton();
+        }
+        else
+        {
+            GameplaySceneController.Instance.ShowPromptMessage("Skill is Cooldown!");
+        }
+        
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        if (currentCd > 0) return;
         if (!PlayerSkillManager.Instance.isAbilityCanceled)
         {
             InitiateSkill2Effects();
@@ -57,6 +71,9 @@ public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
     private void InitiateSkill2Effects()
     {
+        currentCd = cd;
+        cooldownImg.fillAmount = 1;
+
         foreach (var item in allTargetAllWithinArea)
         {
             item.gameObject.AddComponent<Skill2Effect>();

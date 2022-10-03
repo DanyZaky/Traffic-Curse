@@ -22,6 +22,7 @@ public class Skill2Effect : MonoBehaviour
     private IEnumerator StartsEffect()
     {
         aIPath.enabled = false;
+        Destroy(Instantiate(GameplaySceneController.Instance.peluitVfxPrefab, transform), PlayerSkillManager.Instance.skill2Duration);
         yield return new WaitForSeconds(PlayerSkillManager.Instance.skill2Duration);
         aIPath.enabled = true;
         Destroy(this);
