@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill2AreaFanHandler : MonoBehaviour
+public class SkillDetectorColliderFanArea : MonoBehaviour
 {
     private SpriteRenderer _sr;
     public Skill2AnalogController skill2AnalogController;

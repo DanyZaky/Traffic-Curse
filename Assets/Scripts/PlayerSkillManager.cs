@@ -10,6 +10,7 @@ public class PlayerSkillManager : MonoBehaviour
     public bool isAbilityCanceled, isDashing;
     public float skill1DashPower = 2, skill1DashDuration = 0.2f;
     public float skill2Duration = 2f;
+    public float skill3Range = 2f, skill3maxTarget = 3;
     
     private void Awake()
     {
