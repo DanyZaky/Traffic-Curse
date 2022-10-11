@@ -44,7 +44,7 @@ public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         if (currentCd <= 0)
         {
             visualCircleRadius.SetActive(true);
-            PlayerSkillManager.Instance.OpenSkillCancelButton();
+            PlayerTechTreeSkillManager.Instance.OpenSkillCancelButton();
         }
         else
         {
@@ -56,7 +56,7 @@ public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     public void OnPointerUp(PointerEventData eventData)
     {
         if (currentCd > 0) return;
-        if (!PlayerSkillManager.Instance.isAbilityCanceled)
+        if (!PlayerTechTreeSkillManager.Instance.isAbilityCanceled)
         {
             InitiateSkill2Effects();
         }
@@ -66,7 +66,7 @@ public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         }
         
         visualCircleRadius.SetActive(false);
-        PlayerSkillManager.Instance.CloseSkillCancelButton();
+        PlayerTechTreeSkillManager.Instance.CloseSkillCancelButton();
     }
 
     private void InitiateSkill2Effects()

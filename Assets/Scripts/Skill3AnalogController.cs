@@ -28,7 +28,7 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         {
             visualCircleRadius.transform.position = player.position;
             //Vector3 moveVector = (Vector3.up * joystick.Horizontal + Vector3.left * joystick.Vertical);
-            Vector3 moveVector = joystick.Direction * PlayerSkillManager.Instance.skill3Range;
+            Vector3 moveVector = joystick.Direction * PlayerTechTreeSkillManager.Instance.skill3Range;
 
             if (joystick.Horizontal != 0 || joystick.Vertical != 0)
             {
@@ -48,7 +48,7 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         if (currentCd <= 0)
         {
             visualCircleRadius.SetActive(true);
-            PlayerSkillManager.Instance.OpenSkillCancelButton();
+            PlayerTechTreeSkillManager.Instance.OpenSkillCancelButton();
         }
         else
         {
@@ -60,7 +60,7 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     public void OnPointerUp(PointerEventData eventData)
     {
         if (currentCd > 0) return;
-        if (!PlayerSkillManager.Instance.isAbilityCanceled)
+        if (!PlayerTechTreeSkillManager.Instance.isAbilityCanceled)
         {
             InitiateSkill3Effects();
         }
@@ -70,7 +70,7 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         }
 
         visualCircleRadius.SetActive(false);
-        PlayerSkillManager.Instance.CloseSkillCancelButton();
+        PlayerTechTreeSkillManager.Instance.CloseSkillCancelButton();
     }
 
     private void InitiateSkill3Effects()
@@ -87,7 +87,7 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         {
             deathRow.Add(item.gameObject);
             counter++;
-            if (counter == PlayerSkillManager.Instance.skill3maxTarget) break;
+            if (counter == PlayerTechTreeSkillManager.Instance.skill3maxTarget) break;
         }
 
         foreach (var item in deathRow)

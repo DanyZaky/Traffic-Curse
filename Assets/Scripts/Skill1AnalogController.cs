@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointerDownHandler, IDragHandler
 {
-    private Vector2 lastJoystickDirection;
+    private Vector3 lastJoystickDirection;
     private Rigidbody2D playerRb;
-
+    
+    public TrailRenderer playerTrailRenderer;
     public FixedJoystick joystick;
     public GameObject visualCircleRadius;
     public Transform visualArrowDirection;
@@ -15,7 +16,10 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     public Image cooldownImg;
     public float cd, currentCd;
 
-    
+    private void Awake()
+    {
+        
+    }
 
     private void Start()
     {
@@ -47,7 +51,7 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         if (currentCd <= 0)
         {
             visualCircleRadius.SetActive(true);
-            PlayerSkillManager.Instance.OpenSkillCancelButton();
+            PlayerTechTreeSkillManager.Instance.OpenSkillCancelButton();
         }
         else
         {
@@ -58,7 +62,7 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     public void OnPointerUp(PointerEventData eventData)
     {
         if (currentCd > 0) return;
-        if (!PlayerSkillManager.Instance.isAbilityCanceled)
+        if (!PlayerTechTreeSkillManager.Instance.isAbilityCanceled)
         {
             InitiateSkill1Effects();
         }
@@ -68,7 +72,7 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         }
 
         visualCircleRadius.SetActive(false);
-        PlayerSkillManager.Instance.CloseSkillCancelButton();
+        PlayerTechTreeSkillManager.Instance.CloseSkillCancelButton();
     }
 
     private void InitiateSkill1Effects()
@@ -87,9 +91,12 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
     private IEnumerator Dash()
     {
-        playerRb.velocity += lastJoystickDirection * PlayerSkillManager.Instance.skill1DashPower;
-        PlayerSkillManager.Instance.isDashing = true;
-        yield return new WaitForSeconds(PlayerSkillManager.Instance.skill1DashDuration);
-        PlayerSkillManager.Instance.isDashing = false;
+        //playerRb.velocity += lastJoystickDirection * PlayerTechTreeSkillManager.Instance.skill1DashPower;
+        playerTrailRenderer.emitting = true;
+        playerRb.transform.position += lastJoystickDirection * PlayerTechTreeSkillManager.Instance.skill1DashPower;
+        PlayerTechTreeSkillManager.Instance.isDashing = true;
+        yield return new WaitForSeconds(PlayerTechTreeSkillManager.Instance.skill1DashDuration);
+        PlayerTechTreeSkillManager.Instance.isDashing = false;
+        playerTrailRenderer.emitting = false;
     }
 }

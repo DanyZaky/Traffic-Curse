@@ -7,12 +7,12 @@ public class SkillCancelButton : MonoBehaviour, IPointerEnterHandler, IPointerEx
 {
     public void OnPointerEnter(PointerEventData eventData)
     {
-        PlayerSkillManager.Instance.isAbilityCanceled = true;
+        PlayerTechTreeSkillManager.Instance.isAbilityCanceled = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        PlayerSkillManager.Instance.isAbilityCanceled = false;
+        PlayerTechTreeSkillManager.Instance.isAbilityCanceled = false;
     }
 
     // Start is called before the first frame update

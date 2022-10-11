@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSkillManager : MonoBehaviour
+public class PlayerTechTreeSkillManager : MonoBehaviour
 {
-    public static PlayerSkillManager Instance { get; set; }
+    public static PlayerTechTreeSkillManager Instance { get; set; }
 
     public GameObject cancelButton;
     public bool isAbilityCanceled, isDashing;

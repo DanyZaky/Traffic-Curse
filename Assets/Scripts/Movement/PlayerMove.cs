@@ -46,7 +46,7 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PlayerSkillManager.Instance.isDashing) return;
+        if (PlayerTechTreeSkillManager.Instance.isDashing) return;
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }

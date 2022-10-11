@@ -15,7 +15,7 @@ public class SkillDetectorColliderFanArea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Grab") && !PlayerSkillManager.Instance.isAbilityCanceled)
+        if (collision.CompareTag("Grab") && !PlayerTechTreeSkillManager.Instance.isAbilityCanceled)
         {
             _sr.color = Color.green;
             skill2AnalogController.allTargetAllWithinArea.Add(collision);
