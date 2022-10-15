@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointerDownHandler, IDragHandler
 {
@@ -14,7 +15,8 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     public Transform visualArrowDirection;
     public Transform player;
     public Image cooldownImg;
-    public float cd, currentCd;
+    public TextMeshProUGUI stackCounter;
+    public float currentCd;
 
     private void Awake()
     {
@@ -23,7 +25,8 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
     private void Start()
     {
-        
+        playerRb = player.GetComponent<Rigidbody2D>();
+        stackCounter.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -39,16 +42,36 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
             }
         }
 
-        if (currentCd > 0)
+        if (currentCd > 0 && PlayerTechTreeSkillManager.Instance.skill1MaxStack == 0)
         {
             currentCd -= Time.deltaTime;
-            cooldownImg.fillAmount = 1 - (currentCd / cd);
+            cooldownImg.fillAmount = 1 - (currentCd / PlayerTechTreeSkillManager.Instance.skill1Cd);
+        }
+        else if (PlayerTechTreeSkillManager.Instance.skill1MaxStack != 0)
+        {
+            if (currentCd > 0)
+            {
+                if (PlayerTechTreeSkillManager.Instance.skill1CurrentStacks < PlayerTechTreeSkillManager.Instance.skill1MaxStack)
+                {
+                    currentCd -= Time.deltaTime;
+                    cooldownImg.fillAmount = 1 - (currentCd / PlayerTechTreeSkillManager.Instance.skill1Cd);
+                }                
+            }
+            else if (PlayerTechTreeSkillManager.Instance.skill1CurrentStacks < PlayerTechTreeSkillManager.Instance.skill1MaxStack)
+            {
+                currentCd = PlayerTechTreeSkillManager.Instance.skill1Cd;
+                cooldownImg.fillAmount = 1;
+                PlayerTechTreeSkillManager.Instance.skill1CurrentStacks++;
+            }
+
+            stackCounter.gameObject.SetActive(true);
+            stackCounter.text = PlayerTechTreeSkillManager.Instance.skill1CurrentStacks.ToString();
         }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (currentCd <= 0)
+        if ((currentCd <= 0 && PlayerTechTreeSkillManager.Instance.skill1MaxStack == 0) || (PlayerTechTreeSkillManager.Instance.skill1CurrentStacks > 0 && PlayerTechTreeSkillManager.Instance.skill1MaxStack != 0))
         {
             visualCircleRadius.SetActive(true);
             PlayerTechTreeSkillManager.Instance.OpenSkillCancelButton();
@@ -61,7 +84,7 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (currentCd > 0) return;
+        if ((currentCd > 0 && PlayerTechTreeSkillManager.Instance.skill1MaxStack == 0) || (PlayerTechTreeSkillManager.Instance.skill1CurrentStacks < 1 && PlayerTechTreeSkillManager.Instance.skill1MaxStack != 0)) return;
         if (!PlayerTechTreeSkillManager.Instance.isAbilityCanceled)
         {
             InitiateSkill1Effects();
@@ -77,9 +100,17 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
     private void InitiateSkill1Effects()
     {
-        currentCd = cd;
-        cooldownImg.fillAmount = 1;
-        playerRb = player.GetComponent<Rigidbody2D>();
+        if (PlayerTechTreeSkillManager.Instance.skill1MaxStack == 0)
+        {
+            currentCd = PlayerTechTreeSkillManager.Instance.skill1Cd;
+            cooldownImg.fillAmount = 1;
+        }
+        else if (PlayerTechTreeSkillManager.Instance.skill1CurrentStacks > 0)
+        {
+            if (PlayerTechTreeSkillManager.Instance.skill1CurrentStacks == PlayerTechTreeSkillManager.Instance.skill1MaxStack) currentCd = PlayerTechTreeSkillManager.Instance.skill1Cd;
+            PlayerTechTreeSkillManager.Instance.skill1CurrentStacks--;
+        }
+        
         StartCoroutine(Dash());
         
     }

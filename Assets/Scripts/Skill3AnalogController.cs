@@ -87,7 +87,7 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         {
             deathRow.Add(item.gameObject);
             counter++;
-            if (counter == PlayerTechTreeSkillManager.Instance.skill3maxTarget) break;
+            if (counter == PlayerTechTreeSkillManager.Instance.skill3MaxTarget) break;
         }
 
         foreach (var item in deathRow)

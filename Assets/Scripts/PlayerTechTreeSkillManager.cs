@@ -8,9 +8,10 @@ public class PlayerTechTreeSkillManager : MonoBehaviour
 
     public GameObject cancelButton;
     public bool isAbilityCanceled, isDashing;
-    public float skill1DashPower = 2, skill1DashDuration = 0.2f;
+    public int skillPoint = 99;
+    public float skill1Cd = 3, skill1DashPower = 2, skill1DashDuration = 0.2f, skill1MaxStack = 0, skill1CurrentStacks = 0;
     public float skill2Duration = 2f;
-    public float skill3Range = 2f, skill3maxTarget = 3;
+    public float skill3Range = 2f, skill3MaxTarget = 3;
     
     private void Awake()
     {
@@ -26,5 +27,10 @@ public class PlayerTechTreeSkillManager : MonoBehaviour
     {
         cancelButton.SetActive(false);
         isAbilityCanceled = false;
+    }
+
+    public void EnableSkill1Stack()
+    {
+        skill1MaxStack = 2;
     }
 }
