@@ -12,10 +12,11 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
     public FixedJoystick joystick;
     public GameObject visualCircleRadius;
-    public Transform visualCircleArea;
+    public Transform[] visualCircleArea;
     public Transform player;
+    public GameObject playerClonePrefab;
     public Image cooldownImg;
-    public float cd, currentCd;
+    public float currentCd;
 
     private void Awake()
     {
@@ -32,22 +33,34 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
             if (joystick.Horizontal != 0 || joystick.Vertical != 0)
             {
-                visualCircleArea.position = moveVector + visualCircleRadius.transform.position;
+                visualCircleArea[(int)PlayerTechTreeSkillManager.Instance.skill3AreaType].position = moveVector + visualCircleRadius.transform.position;
             }
         }
 
         if (currentCd > 0)
         {
             currentCd -= Time.deltaTime;
-            cooldownImg.fillAmount = 1 - (currentCd / cd);
+            cooldownImg.fillAmount = 1 - (currentCd / PlayerTechTreeSkillManager.Instance.skill3Cd);
         }
+    }
+
+    private void ShowVisualSkillEffectRange()
+    {
+        visualCircleRadius.SetActive(true);
+
+        foreach (var item in visualCircleArea)
+        {
+            item.gameObject.SetActive(false);
+        }
+
+        visualCircleArea[(int)PlayerTechTreeSkillManager.Instance.skill3AreaType].gameObject.SetActive(true);
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         if (currentCd <= 0)
         {
-            visualCircleRadius.SetActive(true);
+            ShowVisualSkillEffectRange();
             PlayerTechTreeSkillManager.Instance.OpenSkillCancelButton();
         }
         else
@@ -75,24 +88,31 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
     private void InitiateSkill3Effects()
     {
-        currentCd = cd;
+        currentCd = PlayerTechTreeSkillManager.Instance.skill3Cd;
         cooldownImg.fillAmount = 1;
 
-        int counter = 0;
-        List<GameObject> deathRow = new List<GameObject>();
-
-        if (allTargetAllWithinArea.Count == 0) return;
-
-        foreach (var item in allTargetAllWithinArea)
+        if (PlayerTechTreeSkillManager.Instance.skill3AreaType == PlayerTechTreeSkillManager.SkillType.B)
         {
-            deathRow.Add(item.gameObject);
-            counter++;
-            if (counter == PlayerTechTreeSkillManager.Instance.skill3MaxTarget) break;
+            Instantiate(playerClonePrefab, visualCircleArea[(int)PlayerTechTreeSkillManager.Instance.skill3AreaType].position, Quaternion.identity);
         }
-
-        foreach (var item in deathRow)
+        else
         {
-            Destroy(item.gameObject);
-        }
+            int counter = 0;
+            List<GameObject> deathRow = new List<GameObject>();
+
+            if (allTargetAllWithinArea.Count == 0) return;
+
+            foreach (var item in allTargetAllWithinArea)
+            {
+                deathRow.Add(item.gameObject);
+                counter++;
+                if (counter == PlayerTechTreeSkillManager.Instance.skill3MaxTarget) break;
+            }
+
+            foreach (var item in deathRow)
+            {
+                Destroy(item);
+            }
+        }        
     }
 }
