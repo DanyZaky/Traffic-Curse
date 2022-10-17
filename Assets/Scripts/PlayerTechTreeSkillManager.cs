@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class PlayerTechTreeSkillManager : MonoBehaviour
 {
+    public enum SkillType { BASE, A, B};
+
     public static PlayerTechTreeSkillManager Instance { get; set; }
 
     public GameObject cancelButton;
     public bool isAbilityCanceled, isDashing;
     public int skillPoint = 99;
     public float skill1Cd = 3, skill1DashPower = 2, skill1DashDuration = 0.2f, skill1MaxStack = 0, skill1CurrentStacks = 0;
-    public float skill2Duration = 2f;
-    public float skill3Range = 2f, skill3MaxTarget = 3;
+    public float skill2Cd = 8, skill2Duration = 9f, skill2MaxTarget = 0;
+    public SkillType skill2AreaType = SkillType.BASE;
+    public float skill3Cd = 12, skill3Range = 4f, skill3MaxTarget = 2, skill3CloneDuration = 10f;
+    public SkillType skill3AreaType = SkillType.BASE;
     
     private void Awake()
     {

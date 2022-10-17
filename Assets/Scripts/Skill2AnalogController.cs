@@ -9,10 +9,10 @@ public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     public FixedJoystick joystick;
     public List<Collider2D> allTargetAllWithinArea;
     public GameObject visualCircleRadius;
-    public Transform visualRangeArea;
+    public Transform[] visualRangeArea;
     public Transform player;
     public Image cooldownImg;
-    public float cd, currentCd;
+    public float currentCd;
 
     private void Awake()
     {
@@ -28,22 +28,34 @@ public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
             if (joystick.Horizontal != 0 || joystick.Vertical != 0)
             {
-                visualRangeArea.rotation = Quaternion.LookRotation(Vector3.forward, moveVector);
+                visualRangeArea[(int)PlayerTechTreeSkillManager.Instance.skill2AreaType].rotation = Quaternion.LookRotation(Vector3.forward, moveVector);
             }
         }
 
         if (currentCd > 0)
         {
             currentCd -= Time.deltaTime;
-            cooldownImg.fillAmount = 1 - (currentCd / cd);
+            cooldownImg.fillAmount = 1 - (currentCd / PlayerTechTreeSkillManager.Instance.skill2Cd);
         }
+    }
+
+    private void ShowVisualSkillEffectRange()
+    {
+        visualCircleRadius.SetActive(true);
+
+        foreach (var item in visualRangeArea)
+        {
+            item.gameObject.SetActive(false);
+        }
+
+        visualRangeArea[(int)PlayerTechTreeSkillManager.Instance.skill2AreaType].gameObject.SetActive(true);
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         if (currentCd <= 0)
         {
-            visualCircleRadius.SetActive(true);
+            ShowVisualSkillEffectRange();
             PlayerTechTreeSkillManager.Instance.OpenSkillCancelButton();
         }
         else
@@ -71,12 +83,30 @@ public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
     private void InitiateSkill2Effects()
     {
-        currentCd = cd;
+        currentCd = PlayerTechTreeSkillManager.Instance.skill2Cd;
         cooldownImg.fillAmount = 1;
 
-        foreach (var item in allTargetAllWithinArea)
+        if (PlayerTechTreeSkillManager.Instance.skill2AreaType == PlayerTechTreeSkillManager.SkillType.A) 
         {
-            item.gameObject.AddComponent<Skill2Effect>();
+            int counter = 0;
+            foreach (var item in allTargetAllWithinArea)
+            {
+                if (item.gameObject.TryGetComponent<Skill2Effect>(out _)) continue;
+                else
+                {
+                    item.gameObject.AddComponent<Skill2Effect>();
+                    counter++;
+                }
+
+                if (counter == PlayerTechTreeSkillManager.Instance.skill2MaxTarget) break;
+            }
         }
+        else
+        {
+            foreach (var item in allTargetAllWithinArea)
+            {
+                item.gameObject.AddComponent<Skill2Effect>();
+            }
+        }        
     }
 }
