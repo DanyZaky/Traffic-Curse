@@ -10,6 +10,7 @@ public class GameplaySceneController : UIController
 
     public GameObject promptMessagePrefab;
     public GameObject peluitVfxPrefab;
+    public int cumulativeScore;
 
     private void Awake()
     {

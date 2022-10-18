@@ -7,8 +7,12 @@ using TMPro;
 
 public class MainMenuController : MonoBehaviour
 {
+    public static MainMenuController Instance { get; internal set; }
+
     private Animator anim;
     [SerializeField] private Button[] menuButton;
+    public Transform entryParent;
+    public GameObject entryPrefab;
 
     [Header("Story")]
     [SerializeField] private TextMeshProUGUI textTMP;
@@ -18,10 +22,22 @@ public class MainMenuController : MonoBehaviour
 
     private int index;
 
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(this);
+    }
+
     void Start()
     {
+        foreach (Transform item in entryParent.transform)
+        {
+            Destroy(item.gameObject);
+        }
+
         anim = gameObject.GetComponent<Animator>();
         anim.Play("idleStartMenu");
+        StartCoroutine(GameManager.Instance.RequestGetScore());
     }
 
     public void OnClickStartMenu()
@@ -105,5 +121,42 @@ public class MainMenuController : MonoBehaviour
         yield return new WaitForSecondsRealtime(1.2f);
 
         SceneManager.LoadScene(1);
+    }
+
+    private List<LeaderboardScoreEntry> SetupEntry()
+    {
+        GameManager bc = GameManager.Instance;
+        List<LeaderboardScoreEntry> entryList = new List<LeaderboardScoreEntry>();
+
+        for (int i = 0; i < bc.userScoreDB.results.Count; i++)
+        {
+            entryList.Add(Instantiate(entryPrefab, entryParent).GetComponent<LeaderboardScoreEntry>());
+        }
+
+        return entryList;
+    }
+
+    private void DataEntry(List<LeaderboardScoreEntry> entryList)
+    {
+        GameManager bc = GameManager.Instance;
+        for (int i = 0; i < bc.userScoreDB.results.Count; i++)
+        {
+            if (string.IsNullOrEmpty(bc.userScoreDB.results[i].username)) entryList[i].nickname.text = i + 1 + ". " + "<No Name>";
+            else entryList[i].nickname.text = i + 1 + ". " + bc.userScoreDB.results[i].username;
+
+            entryList[i].score.text = bc.userScoreDB.results[i].score.ToString();
+        }
+    }
+
+    private int SortByScore(GameManager.UserScore p1, GameManager.UserScore p2)
+    {
+        return p2.score.CompareTo(p1.score);
+    }
+
+    public void LeaderboardGetScore()
+    {
+        List<LeaderboardScoreEntry> entryList = SetupEntry();
+        GameManager.Instance.userScoreDB.results.Sort(SortByScore);
+        DataEntry(entryList);
     }
 }
