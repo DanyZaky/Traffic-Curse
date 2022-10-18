@@ -13,7 +13,7 @@ public class GameCondition : MonoBehaviour
     private float timeLeftCounter;
     
     public Image fillTimeLeft;
-    public TextMeshProUGUI scoreText, finalScoreText;
+    public TextMeshProUGUI scoreText, finalScoreText, usernameText;
     public GameObject winPanel;
 
     private void Start()
@@ -50,6 +50,9 @@ public class GameCondition : MonoBehaviour
     {
         Time.timeScale = 1;
         timeLeftCounter = 0;
+        GameManager.Instance.lastUsername = usernameText.text;
+        GameManager.Instance.lastScore = int.Parse(finalScoreText.text);
+        GameManager.Instance.RequestPostAccountAndPutScore();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

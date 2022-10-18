@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -144,7 +145,7 @@ public class MainMenuController : MonoBehaviour
             if (string.IsNullOrEmpty(bc.userScoreDB.results[i].username)) entryList[i].nickname.text = i + 1 + ". " + "<No Name>";
             else entryList[i].nickname.text = i + 1 + ". " + bc.userScoreDB.results[i].username;
 
-            entryList[i].score.text = bc.userScoreDB.results[i].score.ToString();
+            entryList[i].score.text = bc.userScoreDB.results[i].score.ToString("n0");
         }
     }
 

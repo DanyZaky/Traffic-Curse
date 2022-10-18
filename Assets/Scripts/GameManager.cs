@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public const string KEY_ID = "EOvtkB1fwd26cLwIXJGRgU77xylSKx95XPfGbJd6";
 
     public string currentUserSessionID;
-    public string loadedTextFileName;
-    public string[] wordsDictionary;
+    public string lastUsername;
+    public int lastScore;
 
     [Serializable]
     public class UserScoreList
@@ -89,14 +89,26 @@ public class GameManager : MonoBehaviour
         MainMenuController.Instance.LeaderboardGetScore();
     }
 
-    public void RequestPostAccountMethod(string nickname)
+    //public void RequestPostAccountMethod(string nickname)
+    //{
+    //    StartCoroutine(RequestPostAccount(nickname));
+    //}
+
+    //public void RequestPutScoreMethod()
+    //{
+    //    StartCoroutine(RequestPutScore(currentUserSessionID, (int)GameplaySceneController.Instance.cumulativeScore));
+    //}
+
+    public void RequestPostAccountAndPutScore()
     {
-        StartCoroutine(RequestPostAccount(nickname));
+        StartCoroutine(AccountAndScore());
     }
 
-    public void RequestPutScoreMethod()
+    private IEnumerator AccountAndScore()
     {
-        StartCoroutine(RequestPutScore(currentUserSessionID, (int)GameplaySceneController.Instance.cumulativeScore));
+        StartCoroutine(RequestPostAccount(lastUsername));
+        yield return new WaitForSecondsRealtime(5);
+        StartCoroutine(RequestPutScore(currentUserSessionID, lastScore));
     }
 
     public IEnumerator RequestPostAccount(string username)
