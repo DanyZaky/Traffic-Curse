@@ -233,6 +233,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   delay: 5
 --- !u!70 &1263971635036013836
 CapsuleCollider2D:

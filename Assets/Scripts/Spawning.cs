@@ -6,6 +6,7 @@ public class Spawning : MonoBehaviour
 {
     public GameObject[] anakSD;
     public GameObject Mobil, Mobil2;
+    public Transform[] spawnLocation;
 
     public float spawnDelayAnak, spawnDelayMobil1, spawnDelayMobil2;
     private float spawnDelayAnakCounter, spawnDelayMobil1Counter, spawnDelayMobil2Counter;
@@ -23,7 +24,7 @@ public class Spawning : MonoBehaviour
 
         if(spawnDelayAnakCounter < 0)
         {
-            Instantiate(anakSD[Random.Range(0, anakSD.Length)], new Vector3(-0.77f, -10.48f, 0), Quaternion.identity);
+            Instantiate(anakSD[Random.Range(0, anakSD.Length)], spawnLocation[Random.Range(0, spawnLocation.Length)].position, Quaternion.identity);
             spawnDelayAnakCounter = spawnDelayAnak;
         }
 

@@ -11,8 +11,8 @@ public class CameraLimit : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(
-            Mathf.Clamp(transform.position.x, -3.7f, 3.5f),
-            Mathf.Clamp(transform.position.y, -2.3f, 7.3f),
+            Mathf.Clamp(transform.position.x, -8.3f, 6.9f),
+            Mathf.Clamp(transform.position.y, -11f, 10.4f),
             transform.position.z);
     }
 

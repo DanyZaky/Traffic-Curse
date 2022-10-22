@@ -233,6 +233,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   delay: 5
 --- !u!70 &3933941902741212571
 CapsuleCollider2D:
@@ -401,8 +403,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1093874793
-  m_SortingLayer: 1
+  m_SortingLayerID: -1558544565
+  m_SortingLayer: 2
   m_SortingOrder: 3
   m_Sprite: {fileID: 4315763870618305586, guid: d1e99c2134e6d2444ad9df4b54eff4d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

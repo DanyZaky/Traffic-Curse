@@ -29,7 +29,7 @@ namespace Pathfinding {
 
         private void Start()
         {
-			for (int i = 0; i < 71; i++)
+			for (int i = 0; i < targets.Length; i++)
 			{
 				targets[i] = GameObject.Find("Patrol Points (" + (i + 1) + ")").GetComponent<Transform>();
 			}
