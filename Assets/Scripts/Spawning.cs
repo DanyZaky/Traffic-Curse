@@ -5,16 +5,17 @@ using UnityEngine;
 public class Spawning : MonoBehaviour
 {
     public GameObject[] anakSD;
-    public GameObject Mobil, Mobil2;
+    public GameObject mobilKanan, mobilKiri;
     public Transform[] spawnLocation;
+    public Transform spawnMobilKanan, spawnMobilKiri;
 
     public float spawnDelayAnak, spawnDelayMobil1, spawnDelayMobil2;
-    private float spawnDelayAnakCounter, spawnDelayMobil1Counter, spawnDelayMobil2Counter;
+    private float spawnDelayAnakCounter, spawnDelayMobilKananCounter, spawnDelayMobil2Counter;
 
     void Start()
     {
         spawnDelayAnakCounter = 0;
-        spawnDelayMobil1Counter = spawnDelayMobil1;
+        spawnDelayMobilKananCounter = spawnDelayMobil1;
         spawnDelayMobil2Counter = spawnDelayMobil2/2;
     }
 
@@ -28,20 +29,20 @@ public class Spawning : MonoBehaviour
             spawnDelayAnakCounter = spawnDelayAnak;
         }
 
-        spawnDelayMobil1Counter -= 1f * Time.deltaTime;
+        spawnDelayMobilKananCounter -= 1f * Time.deltaTime;
 
-        if(spawnDelayMobil1Counter < 0)
+        if(spawnDelayMobilKananCounter < 0)
         {
-            Instantiate(Mobil, new Vector3(-16.76f, 1.046598f, 0), Quaternion.identity);
-            spawnDelayMobil1Counter = spawnDelayMobil1;
+            Instantiate(mobilKanan, spawnMobilKanan.position, Quaternion.identity);
+            spawnDelayMobilKananCounter = Random.Range(spawnDelayMobil1 * 0.8f, spawnDelayMobil1 * 1.2f);
         }
 
         spawnDelayMobil2Counter -= 1f * Time.deltaTime;
 
         if (spawnDelayMobil2Counter < 0)
         {
-            Instantiate(Mobil2, new Vector3(16.76f, -1.16883f, 0), Quaternion.identity);
-            spawnDelayMobil2Counter = spawnDelayMobil2;
+            Instantiate(mobilKiri, spawnMobilKiri.position, Quaternion.identity);
+            spawnDelayMobil2Counter = Random.Range(spawnDelayMobil2 * 0.8f, spawnDelayMobil2 * 1.2f);
         }
     }
 }

@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 7664765515969916280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: -0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 7664765517603975353}
   - {fileID: 7664765517159409161}
@@ -181,6 +181,11 @@ MonoBehaviour:
   speed: 1
   targetX: -16.75
   targetY: -1.16883
+  pathMobil:
+  - {x: 3.97, y: 5.5, z: 0}
+  - {x: 3.97, y: -11.85, z: 0}
+  - {x: -19.81, y: -11.85, z: 0}
+  pathIndex: 0
   feel: {fileID: 3614847056800674728}
 --- !u!1 &7664765516092932027
 GameObject:

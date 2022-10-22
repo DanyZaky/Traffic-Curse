@@ -7,14 +7,24 @@ using UnityEngine.SceneManagement;
 
 public class GameCondition : MonoBehaviour
 {
-    public float score;
-    
+    public static GameCondition Instance { get; internal set; }
+        
     public float timeLeft;
     private float timeLeftCounter;
     
     public Image fillTimeLeft;
     public TextMeshProUGUI scoreText, finalScoreText, usernameText;
     public GameObject winPanel;
+
+    [Header("Scoring")]
+    public float totalScore;
+    public float timeSpentMobilKeganggu;
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(this);
+    }
 
     private void Start()
     {
@@ -30,20 +40,21 @@ public class GameCondition : MonoBehaviour
 
         if(timeLeftCounter >= timeLeft)
         {
+            CalculateScore();
             fillTimeLeft.fillAmount = timeLeftCounter / timeLeft;
             winPanel.SetActive(true);
-            finalScoreText.SetText(score.ToString("0"));
+            finalScoreText.SetText(totalScore.ToString("0"));
             Time.timeScale = 0;
         }
 
-        Score();
+        
     }
 
-    private void Score()
+    private void CalculateScore()
     {
-        score += 2f * Time.deltaTime;
+        totalScore += 2f * Time.deltaTime;
 
-        scoreText.SetText(score.ToString("0"));
+        scoreText.SetText(totalScore.ToString("0"));
     }
 
     public void Restart()
