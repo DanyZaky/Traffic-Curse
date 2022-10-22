@@ -18,6 +18,8 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     public TextMeshProUGUI stackCounter;
     public float currentCd;
 
+    public Image handle;
+
     private void Awake()
     {
         
@@ -27,6 +29,7 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     {
         playerRb = player.GetComponent<Rigidbody2D>();
         stackCounter.gameObject.SetActive(false);
+        handle.color = new Color32(255, 255, 255, 0);
     }
 
     private void Update()
@@ -71,6 +74,7 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        handle.color = new Color32(255, 255, 255, 255);
         if ((currentCd <= 0 && PlayerTechTreeSkillManager.Instance.skill1MaxStack == 0) || (PlayerTechTreeSkillManager.Instance.skill1CurrentStacks > 0 && PlayerTechTreeSkillManager.Instance.skill1MaxStack != 0))
         {
             visualCircleRadius.SetActive(true);
@@ -84,6 +88,8 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        handle.color = new Color32(255, 255, 255, 0);
+
         if ((currentCd > 0 && PlayerTechTreeSkillManager.Instance.skill1MaxStack == 0) || (PlayerTechTreeSkillManager.Instance.skill1CurrentStacks < 1 && PlayerTechTreeSkillManager.Instance.skill1MaxStack != 0)) return;
         if (!PlayerTechTreeSkillManager.Instance.isAbilityCanceled)
         {

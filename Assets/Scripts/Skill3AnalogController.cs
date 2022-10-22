@@ -18,9 +18,12 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     public Image cooldownImg;
     public float currentCd;
 
+    public Image handle;
+
     private void Awake()
     {
         visualCircleRadius.SetActive(false);
+        handle.color = new Color32(255, 255, 255, 0);
     }
 
     private void Update()
@@ -58,6 +61,8 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        handle.color = new Color32(255, 255, 255, 255);
+
         if (currentCd <= 0)
         {
             ShowVisualSkillEffectRange();
@@ -72,6 +77,8 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        handle.color = new Color32(255, 255, 255, 0);
+
         if (currentCd > 0) return;
         if (!PlayerTechTreeSkillManager.Instance.isAbilityCanceled)
         {
