@@ -106,8 +106,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5242426923169582107}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2695128, y: -0.13572507, z: 0}
-  m_LocalScale: {x: -1.4285715, y: 1.4285715, z: 1}
+  m_LocalPosition: {x: 0.2695128, y: -0.39, z: 0}
+  m_LocalScale: {x: -1.8493257, y: 1.8493257, z: 1.294528}
   m_Children:
   - {fileID: 3382589481352528161}
   - {fileID: 4700665234164930284}
@@ -185,7 +185,7 @@ SpriteRenderer:
   m_SortingLayerID: -1093874793
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8484042065878757720, guid: 97995f845b20ef64cbc68e65df65ad73, type: 3}
+  m_Sprite: {fileID: 7422388312889136475, guid: 97995f845b20ef64cbc68e65df65ad73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 7664765515969916284}
   - component: {fileID: 39009490749544363}
   m_Layer: 0
-  m_Name: Mobil 1
+  m_Name: Motor 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +224,7 @@ Transform:
   m_GameObject: {fileID: 7664765515969916280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: -0.510594, y: 0.510594, z: 0.72942}
   m_Children:
   - {fileID: 9056516491760994038}
   - {fileID: 8462504767487113843}
@@ -406,7 +406,7 @@ Transform:
   m_GameObject: {fileID: 7664765516131787128}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0573407, y: -0.78265244, z: 0}
-  m_LocalScale: {x: -1.2824279, y: 1.2824278, z: 1.83204}
+  m_LocalScale: {x: -2.038419, y: 2.038419, z: 2.9120274}
   m_Children: []
   m_Father: {fileID: 8462504767487113843}
   m_RootOrder: 3
@@ -451,7 +451,7 @@ SpriteRenderer:
   m_SortingLayerID: -1093874793
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1533227416508406053, guid: 9d980186373a498418ca81b2850bfbaa, type: 3}
+  m_Sprite: {fileID: -2203382133448806535, guid: 97995f845b20ef64cbc68e65df65ad73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -478,7 +478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7664765517159409161
 Transform:
   m_ObjectHideFlags: 0
@@ -487,7 +487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7664765517159409162}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9306588, y: -0.56999236, z: 0}
+  m_LocalPosition: {x: 1.04, y: -0.56999236, z: 0}
   m_LocalScale: {x: -1.3175801, y: 1.3175801, z: 1.8822573}
   m_Children: []
   m_Father: {fileID: 8462504767487113843}
@@ -570,7 +570,7 @@ Transform:
   m_GameObject: {fileID: 7664765517411874301}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.90965897, y: -0.7778924, z: 0}
-  m_LocalScale: {x: -1.4195573, y: 1.419557, z: 2.027939}
+  m_LocalScale: {x: -2.2133214, y: 2.213321, z: 3.161888}
   m_Children: []
   m_Father: {fileID: 8462504767487113843}
   m_RootOrder: 2
@@ -615,7 +615,7 @@ SpriteRenderer:
   m_SortingLayerID: -1093874793
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1533227416508406053, guid: 9d980186373a498418ca81b2850bfbaa, type: 3}
+  m_Sprite: {fileID: -2203382133448806535, guid: 97995f845b20ef64cbc68e65df65ad73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -652,7 +652,7 @@ Transform:
   m_GameObject: {fileID: 7664765517603975354}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.1956589, y: 0.15100753, z: 0}
-  m_LocalScale: {x: -1.2836599, y: 1.2836599, z: 1.8338}
+  m_LocalScale: {x: -1.6404134, y: 1.6404134, z: 2.3434477}
   m_Children: []
   m_Father: {fileID: 8462504767487113843}
   m_RootOrder: 0
@@ -697,7 +697,7 @@ SpriteRenderer:
   m_SortingLayerID: -1093874793
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7657420189145379758, guid: 9d980186373a498418ca81b2850bfbaa, type: 3}
+  m_Sprite: {fileID: -4471343536277829209, guid: 97995f845b20ef64cbc68e65df65ad73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
