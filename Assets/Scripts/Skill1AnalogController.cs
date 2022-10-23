@@ -27,6 +27,7 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
 
     private void Start()
     {
+        visualCircleRadius.SetActive(false);
         playerRb = player.GetComponent<Rigidbody2D>();
         stackCounter.gameObject.SetActive(false);
         handle.color = new Color32(255, 255, 255, 0);
@@ -77,6 +78,10 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         handle.color = new Color32(255, 255, 255, 255);
         if ((currentCd <= 0 && PlayerTechTreeSkillManager.Instance.skill1MaxStack == 0) || (PlayerTechTreeSkillManager.Instance.skill1CurrentStacks > 0 && PlayerTechTreeSkillManager.Instance.skill1MaxStack != 0))
         {
+            if (PlayerTechTreeSkillManager.Instance.skill1DashPower == 7)
+            {
+                visualCircleRadius.transform.localScale = new Vector3(2.72f, 2.72f, 0);
+            }
             visualCircleRadius.SetActive(true);
             PlayerTechTreeSkillManager.Instance.OpenSkillCancelButton();
         }
@@ -129,6 +134,7 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     private IEnumerator Dash()
     {
         //playerRb.velocity += lastJoystickDirection * PlayerTechTreeSkillManager.Instance.skill1DashPower;
+        GameManager.Instance.PlaySfx("Dash");
         playerTrailRenderer.emitting = true;
         playerRb.transform.position += lastJoystickDirection * PlayerTechTreeSkillManager.Instance.skill1DashPower;
         PlayerTechTreeSkillManager.Instance.isDashing = true;

@@ -47,16 +47,20 @@ public class GrabStuff : MonoBehaviour
             if (collisions[0] != null) GrabChild(collisions[0].gameObject);
 
             collisions.Clear();
+            GameManager.Instance.PlaySfxRandom("Pick", 2);
         }
         else if (anakSD[0] != null)
         {
             anakSD[0].GetComponent<Collider2D>().isTrigger = false;
             anakSD[0] = null;
             isGrabbing = false;
+            GameManager.Instance.PlaySfxRandom("Drop", 2);
         }
         else
         {
             print("kosong");
+            isGrabbing = false;
+            GameManager.Instance.PlaySfxRandom("Drop", 2);
         }
         
 
@@ -78,9 +82,14 @@ public class GrabStuff : MonoBehaviour
 
     private void GrabChild(GameObject child)
     {
+        GameCondition.Instance.childPickCount++;
         anakSD[0] = child;
         anakSD[0].GetComponent<Collider2D>().isTrigger = true;
-        anakSD[0].GetComponent<AnakSDHandler>().isSad = false;
+        if (anakSD[0].GetComponent<AnakSDHandler>().isSad)
+        {
+            anakSD[0].GetComponent<AnakSDHandler>().isSad = false;
+            GameCondition.Instance.childCalmed++;
+        }
         isGrabbing = true;
     }
 

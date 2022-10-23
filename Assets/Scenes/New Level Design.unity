@@ -440,7 +440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &50551205
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1799,8 +1799,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 085185b08a40a924985bc0e4176edea6, type: 3}
-  m_Color: {r: 0.41255784, g: 0.44589856, b: 0.6886792, a: 1}
+  m_Sprite: {fileID: -6744268438445574022, guid: 3b3c3c789a1913744b7cc6d5595069ca, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1923,6 +1923,18 @@ MonoBehaviour:
           m_StringArgument: Dash within a certain distance.
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &180423029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2034,6 +2046,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Blow whistle has a wider area.
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &183782730
@@ -3005,9 +3029,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244519754}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0064, z: 0}
-  m_LocalScale: {x: 0.32498825, y: 0.32817313, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.0117519535, z: 0}
+  m_LocalScale: {x: 1.3324165, y: 1.3454742, z: 0}
   m_Children: []
   m_Father: {fileID: 1266521697}
   m_RootOrder: 1
@@ -3040,7 +3064,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.56
+  m_Radius: 1.165
 --- !u!212 &244519758
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3081,7 +3105,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 84487d73ca4b791498332d8f6858417f, type: 3}
+  m_Sprite: {fileID: -6744268438445574022, guid: 3b3c3c789a1913744b7cc6d5595069ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3910,6 +3934,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &292397025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4247,7 +4283,7 @@ Transform:
   m_GameObject: {fileID: 331769978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5281, y: 0.4809991, z: 1}
+  m_LocalScale: {x: 0.50183886, y: 0.4809991, z: 1}
   m_Children: []
   m_Father: {fileID: 175990160}
   m_RootOrder: 1
@@ -4282,7 +4318,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}
-    oldSize: {x: 2.53, y: 1.59}
+    oldSize: {x: 2.32, y: 1.48}
     newSize: {x: 1.6, y: 2.53}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4290,42 +4326,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.49, y: -0.56}
-      - {x: 2.51, y: -0.45999998}
-      - {x: 2.52, y: -0.39999998}
-      - {x: 2.53, y: -0.32999998}
-      - {x: 2.53, y: 0.34}
-      - {x: 2.52, y: 0.41}
-      - {x: 2.51, y: 0.45999998}
-      - {x: 2.5, y: 0.47}
-      - {x: 2.49, y: 0.56}
-      - {x: 2.46, y: 0.68}
-      - {x: 2.44, y: 0.75}
-      - {x: 2.4299998, y: 0.78}
-      - {x: 2.4099998, y: 0.79999995}
-      - {x: 2.36, y: 0.79999995}
-      - {x: 2.32, y: 0.78999996}
-      - {x: 2.26, y: 0.77}
-      - {x: 1.9699999, y: 0.66999996}
-      - {x: 1.93, y: 0.65999997}
-      - {x: 1.03, y: 0.35999998}
-      - {x: 0.95, y: 0.34}
-      - {x: 0.89, y: 0.32}
-      - {x: 0.51, y: 0.19}
-      - {x: 0.03, y: 0.03}
-      - {x: 0, y: 0}
-      - {x: 0.01, y: -0.03}
-      - {x: 0.049999997, y: -0.04}
-      - {x: 0.11, y: -0.06}
-      - {x: 0.39, y: -0.14999999}
-      - {x: 1.0799999, y: -0.38}
-      - {x: 1.99, y: -0.68}
-      - {x: 2.05, y: -0.7}
-      - {x: 2.33, y: -0.78999996}
-      - {x: 2.36, y: -0.79999995}
-      - {x: 2.4099998, y: -0.79999995}
-      - {x: 2.4299998, y: -0.78}
-      - {x: 2.47, y: -0.64}
+    - - {x: 2.2251174, y: 0.7199689}
+      - {x: 0.013883624, y: -0.0069898665}
+      - {x: 2.2009432, y: -0.72963125}
+      - {x: 2.3136277, y: -0.25230944}
+      - {x: 2.3061156, y: 0.26150382}
 --- !u!212 &331769982
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4366,7 +4371,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1f0d95620d0e1594ea75c89ba575506c, type: 3}
+  m_Sprite: {fileID: 1095951274490273262, guid: 3b3c3c789a1913744b7cc6d5595069ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4587,6 +4592,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &355583998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4653,7 +4670,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 938609685136522548, guid: 486eb68897631174d998266a3b739049, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 938609685136522548, guid: 486eb68897631174d998266a3b739049, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5436,6 +5453,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Dash has a significantly increased range.
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &542524376
@@ -7080,6 +7109,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &666042822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7234,9 +7275,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698279742}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0064, z: 0}
-  m_LocalScale: {x: 0.25735527, y: 0.25987735, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.0117519535, z: 0}
+  m_LocalScale: {x: 1.0421892, y: 1.0524027, z: 0}
   m_Children: []
   m_Father: {fileID: 1266521697}
   m_RootOrder: 0
@@ -7269,7 +7310,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.56
+  m_Radius: 1.165
 --- !u!212 &698279746
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7310,7 +7351,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 84487d73ca4b791498332d8f6858417f, type: 3}
+  m_Sprite: {fileID: -6744268438445574022, guid: 3b3c3c789a1913744b7cc6d5595069ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8581,6 +8622,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &923118752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8979,7 +9032,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 952956451}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 835472385}
+        m_TargetAssemblyTypeName: WindowTechTree, Assembly-CSharp
+        m_MethodName: ShowSkillPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &952956451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9641,6 +9718,18 @@ MonoBehaviour:
           m_StringArgument: Order Back has a larger area and max target increased.
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1034190105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10261,6 +10350,18 @@ MonoBehaviour:
           m_StringArgument: Order Back children to go back instantly. Max 3 target.
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1051328312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10393,6 +10494,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Blow whistle to stop children within the area.
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1058765781
@@ -10606,6 +10719,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonBackSFX
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11014,7 +11139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptMessagePrefab: {fileID: 7814615169096783702, guid: c179fb2788579774792880741975e72b, type: 3}
-  peluitVfxPrefab: {fileID: 7864183208825075010, guid: b4f8892fe934346459c175aaaea28b58, type: 3}
+  peluitVfxPrefab: {fileID: 3341041957694435081, guid: 1ca493d584f95d14ab463891af16f74a, type: 3}
 --- !u!114 &1121716954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11141,9 +11266,13 @@ MonoBehaviour:
   - {fileID: 159999135}
   spawnMobilKanan: {fileID: 340562363}
   spawnMobilKiri: {fileID: 1110474711}
-  spawnDelayAnak: 11
   spawnDelayMobil1: 33
   spawnDelayMobil2: 40
+  minSpawnDelayAnak: 3
+  maxSpawnDelayAnak: 11
+  _spawnDelayAnakCounter: 0
+  _spawnDelayMobilKananCounter: 0
+  _spawnDelayMobil2Counter: 0
 --- !u!4 &1123594097
 Transform:
   m_ObjectHideFlags: 0
@@ -11172,13 +11301,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fc5bcae90610b42ab62697686eb17f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 10
+  timeLeft: 180
+  timeLeftCounter: 0
   fillTimeLeft: {fileID: 963452060}
   scoreText: {fileID: 50551206}
   finalScoreText: {fileID: 239971928}
   usernameText: {fileID: 2055096485}
   winPanel: {fileID: 1868561931}
   isGameOver: 0
+  childPickCount: 0
+  childCalmed: 0
+  happyKids: {fileID: 1771239557}
+  sadKids: {fileID: 184564171}
+  happyDriver: {fileID: 245398522}
+  distractedDriver: {fileID: 1481590679}
+  timeSpentDistractedDriver: {fileID: 1625380148}
+  inputField: {fileID: 2015821075}
+  menu: {fileID: 634416080}
+  newDay: {fileID: 1504219902}
   totalScore: 0
   countHappyKid: 0
   countSadKid: 0
@@ -11429,8 +11569,8 @@ SpriteRenderer:
   m_SortingLayerID: 940420301
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5b56d9fa0e8bd6e409ed188db38a692c, type: 3}
-  m_Color: {r: 0.41255784, g: 0.44589856, b: 0.6886792, a: 1}
+  m_Sprite: {fileID: 1956338800447763276, guid: 3b3c3c789a1913744b7cc6d5595069ca, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11449,7 +11589,7 @@ Transform:
   m_GameObject: {fileID: 1150654158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.85, y: 1.85, z: 0}
+  m_LocalScale: {x: 1.268545, y: 1.268545, z: 0}
   m_Children:
   - {fileID: 1166915017}
   m_Father: {fileID: 0}
@@ -11556,7 +11696,7 @@ Transform:
   m_GameObject: {fileID: 1166915016}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.74219465, y: 0.67599875, z: 0}
+  m_LocalScale: {x: 1.0823897, y: 0.98585206, z: 0}
   m_Children: []
   m_Father: {fileID: 1150654160}
   m_RootOrder: 0
@@ -11601,7 +11741,7 @@ SpriteRenderer:
   m_SortingLayerID: 940420301
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a2e2e1dc8c6f91141896806aa69a23c8, type: 3}
+  m_Sprite: {fileID: 1015607843551263133, guid: 3b3c3c789a1913744b7cc6d5595069ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11697,6 +11837,18 @@ MonoBehaviour:
       - m_Target: {fileID: 835472385}
         m_TargetAssemblyTypeName: WindowTechTree, Assembly-CSharp
         m_MethodName: UnlockSkill1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12032,9 +12184,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240423401}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.0064, z: 0}
-  m_LocalScale: {x: 0.45147836, y: 0.45590284, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.0117519535, z: 0}
+  m_LocalScale: {x: 1.082788, y: 1.0933993, z: 0}
   m_Children: []
   m_Father: {fileID: 1266521697}
   m_RootOrder: 2
@@ -12067,7 +12219,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.56
+  m_Radius: 1.17
 --- !u!212 &1240423405
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12108,7 +12260,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2d7115242b001a5488fd3a948dad381d, type: 3}
+  m_Sprite: {fileID: 8883678856872131486, guid: 3b3c3c789a1913744b7cc6d5595069ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12323,6 +12475,18 @@ MonoBehaviour:
             the area.
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1263265625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12377,7 +12541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1266521697
 Transform:
   m_ObjectHideFlags: 0
@@ -12387,7 +12551,7 @@ Transform:
   m_GameObject: {fileID: 1266521696}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.3733644, y: 2.3733644, z: 0}
+  m_LocalScale: {x: 1.2934021, y: 1.2934021, z: 0}
   m_Children:
   - {fileID: 698279743}
   - {fileID: 244519755}
@@ -12435,8 +12599,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 085185b08a40a924985bc0e4176edea6, type: 3}
-  m_Color: {r: 0.41255784, g: 0.44589856, b: 0.6886792, a: 1}
+  m_Sprite: {fileID: 1956338800447763276, guid: 3b3c3c789a1913744b7cc6d5595069ca, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13099,6 +13263,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14000,7 +14176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Spent Distracted Drivers
+  m_text: TIme Spent Distracted Drivers
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea74a62a6285b2e4ea0f25a9993c061a, type: 2}
   m_sharedMaterial: {fileID: -6116066431178258874, guid: ea74a62a6285b2e4ea0f25a9993c061a, type: 2}
@@ -14637,6 +14813,18 @@ MonoBehaviour:
           m_StringArgument: Blow whistle becomes single-target. Greatly reduce cooldown.
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1612470185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14863,6 +15051,18 @@ MonoBehaviour:
       - m_Target: {fileID: 835472385}
         m_TargetAssemblyTypeName: WindowTechTree, Assembly-CSharp
         m_MethodName: UpgradeSkill3A
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15116,6 +15316,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15874,6 +16086,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1660815115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15940,7 +16164,7 @@ Transform:
   m_GameObject: {fileID: 1674256045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5281, y: 0.4809991, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.46, z: 1}
   m_Children: []
   m_Father: {fileID: 175990160}
   m_RootOrder: 0
@@ -15985,7 +16209,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5b066fbbfa93d544f825fe2c9b5365fb, type: 3}
+  m_Sprite: {fileID: 1095951274490273262, guid: 3b3c3c789a1913744b7cc6d5595069ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -16026,7 +16250,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}
-    oldSize: {x: 2.53, y: 1.6}
+    oldSize: {x: 2.32, y: 1.48}
     newSize: {x: 1.6, y: 2.53}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -16034,42 +16258,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.49, y: -0.56}
-      - {x: 2.51, y: -0.45999998}
-      - {x: 2.52, y: -0.39999998}
-      - {x: 2.53, y: -0.32999998}
-      - {x: 2.53, y: 0.34}
-      - {x: 2.52, y: 0.41}
-      - {x: 2.51, y: 0.45999998}
-      - {x: 2.5, y: 0.47}
-      - {x: 2.49, y: 0.56}
-      - {x: 2.46, y: 0.68}
-      - {x: 2.44, y: 0.75}
-      - {x: 2.4299998, y: 0.78}
-      - {x: 2.4099998, y: 0.79999995}
-      - {x: 2.36, y: 0.79999995}
-      - {x: 2.32, y: 0.78999996}
-      - {x: 2.26, y: 0.77}
-      - {x: 1.9699999, y: 0.66999996}
-      - {x: 1.93, y: 0.65999997}
-      - {x: 1.03, y: 0.35999998}
-      - {x: 0.95, y: 0.34}
-      - {x: 0.89, y: 0.32}
-      - {x: 0.51, y: 0.19}
-      - {x: 0.03, y: 0.03}
-      - {x: 0, y: 0}
-      - {x: 0.01, y: -0.03}
-      - {x: 0.049999997, y: -0.04}
-      - {x: 0.11, y: -0.06}
-      - {x: 0.39, y: -0.14999999}
-      - {x: 1.0799999, y: -0.38}
-      - {x: 1.99, y: -0.68}
-      - {x: 2.05, y: -0.7}
-      - {x: 2.33, y: -0.78999996}
-      - {x: 2.36, y: -0.79999995}
-      - {x: 2.4099998, y: -0.79999995}
-      - {x: 2.4299998, y: -0.78}
-      - {x: 2.47, y: -0.64}
+    - - {x: 0.0035488605, y: 0.0073281527}
+      - {x: 2.1989663, y: -0.737574}
+      - {x: 2.284408, y: -0.41974008}
+      - {x: 2.3220954, y: -0.060790837}
+      - {x: 2.2948184, y: 0.34878814}
+      - {x: 2.2205908, y: 0.7036762}
 --- !u!1 &1676551738
 GameObject:
   m_ObjectHideFlags: 0
@@ -16182,7 +16376,7 @@ Transform:
   - {fileID: 340562363}
   - {fileID: 1110474711}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1686678793
 GameObject:
@@ -16380,9 +16574,11 @@ MonoBehaviour:
   - {fileID: 1791231014}
   - {fileID: 1627339510}
   - {fileID: 642923140}
+  skillAlert: {fileID: 305531361}
+  skillFilledBar: {fileID: 2061387809}
   isAbilityCanceled: 0
   isDashing: 0
-  skillPoint: 2
+  skillPoint: 0
   skill1Cd: 3
   skill1DashPower: 3.2
   skill1DashDuration: 0.35
@@ -16397,6 +16593,7 @@ MonoBehaviour:
   skill3MaxTarget: 2
   skill3CloneDuration: 10
   skill3AreaType: 0
+  gainedSkillpoint: 0
 --- !u!114 &1686678801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16519,7 +16716,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0.19607843}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -16628,6 +16825,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Dash has 2 stacks that would charge overtime.
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1699254097
@@ -17391,6 +17600,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1768750194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17926,6 +18147,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1843475724}
         m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
         m_MethodName: OnClickMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18786,6 +19019,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1927777342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19016,7 +19261,7 @@ Transform:
   m_GameObject: {fileID: 1975793721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5281, y: 0.4809991, z: 1}
+  m_LocalScale: {x: 0.65859354, y: 0.6466552, z: 1}
   m_Children: []
   m_Father: {fileID: 175990160}
   m_RootOrder: 2
@@ -19051,7 +19296,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}
-    oldSize: {x: 2.53, y: 4.19}
+    oldSize: {x: 1.76, y: 2.93}
     newSize: {x: 1.6, y: 2.53}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -19059,68 +19304,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.91, y: -1.6949999}
-      - {x: 1.9699999, y: -1.625}
-      - {x: 2.01, y: -1.5749999}
-      - {x: 2.07, y: -1.505}
-      - {x: 2.12, y: -1.435}
-      - {x: 2.19, y: -1.3249999}
-      - {x: 2.23, y: -1.255}
-      - {x: 2.34, y: -1.025}
-      - {x: 2.3999999, y: -0.875}
-      - {x: 2.4199998, y: -0.815}
-      - {x: 2.46, y: -0.685}
-      - {x: 2.48, y: -0.60499996}
-      - {x: 2.51, y: -0.465}
-      - {x: 2.53, y: -0.345}
-      - {x: 2.53, y: 0.345}
-      - {x: 2.51, y: 0.45499998}
-      - {x: 2.49, y: 0.555}
-      - {x: 2.46, y: 0.675}
-      - {x: 2.44, y: 0.745}
-      - {x: 2.4099998, y: 0.835}
-      - {x: 2.36, y: 0.965}
-      - {x: 2.33, y: 1.035}
-      - {x: 2.23, y: 1.245}
-      - {x: 2.1499999, y: 1.375}
-      - {x: 2.11, y: 1.435}
-      - {x: 2.04, y: 1.525}
-      - {x: 1.9599999, y: 1.625}
-      - {x: 1.9, y: 1.6949999}
-      - {x: 1.6999999, y: 1.895}
-      - {x: 1.63, y: 1.9549999}
-      - {x: 1.5699999, y: 2.0049999}
-      - {x: 1.49, y: 2.065}
-      - {x: 1.4399999, y: 2.095}
-      - {x: 1.41, y: 2.095}
-      - {x: 1.36, y: 2.0349998}
-      - {x: 1.31, y: 1.9649999}
-      - {x: 1.2099999, y: 1.8149999}
-      - {x: 1.14, y: 1.7149999}
-      - {x: 1.06, y: 1.5949999}
-      - {x: 0.98999995, y: 1.495}
-      - {x: 0.90999997, y: 1.375}
-      - {x: 0.84, y: 1.275}
-      - {x: 0.76, y: 1.155}
-      - {x: 0.69, y: 1.045}
-      - {x: 0.61, y: 0.935}
-      - {x: 0.53999996, y: 0.835}
-      - {x: 0.45999998, y: 0.715}
-      - {x: 0.39, y: 0.615}
-      - {x: 0.32999998, y: 0.525}
-      - {x: 0.26, y: 0.42499998}
-      - {x: 0.17999999, y: 0.305}
-      - {x: 0.089999996, y: 0.175}
-      - {x: 0.049999997, y: 0.114999995}
-      - {x: 0, y: 0.035}
-      - {x: 0, y: -0.044999998}
-      - {x: 0.14, y: -0.255}
-      - {x: 1.1899999, y: -1.795}
-      - {x: 1.3199999, y: -1.985}
-      - {x: 1.41, y: -2.095}
-      - {x: 1.4599999, y: -2.095}
-      - {x: 1.54, y: -2.0449998}
-      - {x: 1.63, y: -1.9749999}
+    - - {x: 0.9898335, y: 1.4858587}
+      - {x: -0.0018057823, y: -0.009693325}
+      - {x: 0.60509914, y: -0.8574305}
+      - {x: 1.0287899, y: -1.4575242}
+      - {x: 1.4534314, y: -1.0294734}
+      - {x: 1.7377132, y: -0.3397515}
+      - {x: 1.7513229, y: 0.032812834}
+      - {x: 1.7597167, y: 0.26259917}
+      - {x: 1.5932398, y: 0.77253306}
+      - {x: 1.3246326, y: 1.1623331}
 --- !u!212 &1975793725
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19161,7 +19354,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: adb1bdd8240e626428d4495f5386b3c3, type: 3}
+  m_Sprite: {fileID: 753502572116195516, guid: 3b3c3c789a1913744b7cc6d5595069ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -21175,7 +21368,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -21646,6 +21839,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1121716953}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -22369,60 +22574,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136697543}
   m_CullTransparentMesh: 1
---- !u!1001 &910280263266699595
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 910280263654867770, guid: d174b858ed34fc84996dff52db2e8578, type: 3}
-      propertyPath: m_Name
-      value: Player Clone
-      objectReference: {fileID: 0}
-    - target: {fileID: 910280263654867775, guid: d174b858ed34fc84996dff52db2e8578, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 910280263654867775, guid: d174b858ed34fc84996dff52db2e8578, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 910280263654867775, guid: d174b858ed34fc84996dff52db2e8578, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 910280263654867775, guid: d174b858ed34fc84996dff52db2e8578, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910280263654867775, guid: d174b858ed34fc84996dff52db2e8578, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 910280263654867775, guid: d174b858ed34fc84996dff52db2e8578, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910280263654867775, guid: d174b858ed34fc84996dff52db2e8578, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910280263654867775, guid: d174b858ed34fc84996dff52db2e8578, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910280263654867775, guid: d174b858ed34fc84996dff52db2e8578, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910280263654867775, guid: d174b858ed34fc84996dff52db2e8578, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910280263654867775, guid: d174b858ed34fc84996dff52db2e8578, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d174b858ed34fc84996dff52db2e8578, type: 3}

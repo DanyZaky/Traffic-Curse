@@ -191,4 +191,10 @@ public class WindowTechTree : MonoBehaviour
             isShowingSkillPoints = true;
         }
     }
+
+    public void ShowSkillPoint()
+    {
+        isShowingSkillPoints = true;
+        lastDesc = "";
+    }
 }

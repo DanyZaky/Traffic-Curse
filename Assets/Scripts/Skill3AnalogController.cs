@@ -104,6 +104,7 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     {
         currentCd = PlayerTechTreeSkillManager.Instance.skill3Cd;
         cooldownImg.fillAmount = 0;
+        GameManager.Instance.PlaySfxRandom("Ngamuk", 3);
 
         if (PlayerTechTreeSkillManager.Instance.skill3AreaType == PlayerTechTreeSkillManager.SkillType.B)
         {

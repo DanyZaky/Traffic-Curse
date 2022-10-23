@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerTechTreeSkillManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerTechTreeSkillManager : MonoBehaviour
 
     public GameObject cancelButton;
     public GameObject[] skillButtons;
+    public GameObject skillAlert;
+    public Image skillFilledBar;
     public bool isAbilityCanceled, isDashing;
     public int skillPoint = 99;
     public float skill1Cd = 3, skill1DashPower = 2, skill1DashDuration = 0.2f, skill1MaxStack = 0, skill1CurrentStacks = 0;
@@ -17,6 +20,8 @@ public class PlayerTechTreeSkillManager : MonoBehaviour
     public SkillType skill2AreaType = SkillType.BASE;
     public float skill3Cd = 12, skill3Range = 4f, skill3MaxTarget = 2, skill3CloneDuration = 10f;
     public SkillType skill3AreaType = SkillType.BASE;
+
+    [HideInInspector] public int gainedSkillpoint;
     
     private void Awake()
     {
@@ -29,6 +34,19 @@ public class PlayerTechTreeSkillManager : MonoBehaviour
         foreach (var item in skillButtons)
         {
             item.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        skillFilledBar.fillAmount = gainedSkillpoint / 6f;
+        if (skillPoint != 0)
+        {
+            skillAlert.SetActive(true);
+        }
+        else
+        {
+            skillAlert.SetActive(false);
         }
     }
 

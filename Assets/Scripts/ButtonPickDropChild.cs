@@ -14,6 +14,7 @@ public class ButtonPickDropChild : MonoBehaviour, IPointerDownHandler, IPointerU
     public void OnPointerUp(PointerEventData eventData)
     {
         grabStuff.PickorDropChild();
+        
         //grabStuff.isActivate = false;
     }
 }

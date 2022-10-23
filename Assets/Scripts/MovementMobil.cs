@@ -14,6 +14,7 @@ public class MovementMobil : MonoBehaviour
 
     public GameObject feel;
     private GameCondition gc;
+    private float cdKlakson;
     void Start()
     {
         feel.SetActive(false);
@@ -26,6 +27,11 @@ public class MovementMobil : MonoBehaviour
     void Update()
     {
         Movement(speed);
+
+        if (cdKlakson > 0)
+        {
+            cdKlakson -= Time.deltaTime;
+        }
 
         if(isFeel == true)
         {
@@ -76,6 +82,13 @@ public class MovementMobil : MonoBehaviour
         if(col.gameObject.CompareTag("Grab"))
         {
             isFeel = true;
+
+            if (cdKlakson <= 0)
+            {
+                cdKlakson = 3;
+                GameManager.Instance.PlaySfxRandom("Klakson", 3);
+            }
+            
         }
-    }
+    }    
 }

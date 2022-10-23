@@ -75,10 +75,10 @@ public class UIController : MonoBehaviour
 
     public void ButtonSFX()
     {
-        
+        GameManager.Instance.PlaySfx("ButtonHit");
     }
     public void ButtonBackSFX()
     {
-
+        GameManager.Instance.PlaySfx("ButtonBack");
     }
 }

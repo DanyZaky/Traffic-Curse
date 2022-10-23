@@ -39,6 +39,9 @@ public class MainMenuController : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         anim.Play("idleStartMenu");
         StartCoroutine(GameManager.Instance.RequestGetScore());
+
+        GameManager.Instance.PlayBgm("Menu");
+        GameManager.Instance.PlaySfx("StartScreen");
     }
 
     public void OnClickStartMenu()
@@ -159,5 +162,15 @@ public class MainMenuController : MonoBehaviour
         List<LeaderboardScoreEntry> entryList = SetupEntry();
         GameManager.Instance.userScoreDB.results.Sort(SortByScore);
         DataEntry(entryList);
+    }
+
+    public void ButtonSFX()
+    {
+        GameManager.Instance.PlaySfx("ButtonHit");
+    }
+
+    public void ButtonBackSFX()
+    {
+        GameManager.Instance.PlaySfx("ButtonBack");
     }
 }

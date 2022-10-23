@@ -23,6 +23,13 @@ public class GameplaySceneController : UIController
         }
     }
 
+    private void Start()
+    {
+        GameManager.Instance.PlayBgm("Gameplay");
+        GameManager.Instance.PlaySfx("Bell");
+
+    }
+
     public void ShowPromptMessage(string message)
     {
         GameObject promptMsg = Instantiate(promptMessagePrefab, transform);

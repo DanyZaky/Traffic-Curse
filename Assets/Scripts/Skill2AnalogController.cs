@@ -99,6 +99,7 @@ public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     {
         currentCd = PlayerTechTreeSkillManager.Instance.skill2Cd;
         cooldownImg.fillAmount = 0;
+        GameManager.Instance.PlaySfx("Peluit");
 
         if (PlayerTechTreeSkillManager.Instance.skill2AreaType == PlayerTechTreeSkillManager.SkillType.A) 
         {

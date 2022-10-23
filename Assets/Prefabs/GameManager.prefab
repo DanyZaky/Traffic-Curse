@@ -44,12 +44,162 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio:
-    soundEffects: []
-    backgroundMusics: []
+    soundEffects:
+    - name: AnakKecil0
+      clip: {fileID: 8300000, guid: ea2f6dc96bf868e49b1b56c8185db793, type: 3}
+      volume: 0.18
+      pitch: 1.2
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: AnakKecil1
+      clip: {fileID: 8300000, guid: 18dfa5a47095c794a8dfb5d897b9fe88, type: 3}
+      volume: 0.18
+      pitch: 1.2
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: AnakKecil2
+      clip: {fileID: 8300000, guid: 13f4836b6a0276541bb2655663c27254, type: 3}
+      volume: 0.18
+      pitch: 1.2
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Bell
+      clip: {fileID: 8300000, guid: cdc69206bea361e46a23dacc3fc055c1, type: 3}
+      volume: 0.3
+      pitch: 1
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Dash
+      clip: {fileID: 8300000, guid: 4c1907ecfb7a01a4ab06cdd76d35b84b, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Drop0
+      clip: {fileID: 8300000, guid: 9763b4a225790214eb56f0dbf3e16289, type: 3}
+      volume: 1
+      pitch: 1.2
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Drop1
+      clip: {fileID: 8300000, guid: aaff3c882aaedb548b26a509f092eaf5, type: 3}
+      volume: 1
+      pitch: 1.2
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: GameOver
+      clip: {fileID: 8300000, guid: aaff3c882aaedb548b26a509f092eaf5, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Kendaraan
+      clip: {fileID: 8300000, guid: 94afc33dd0b50d544abde74195e6a604, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Klakson0
+      clip: {fileID: 8300000, guid: 8a503c179c3132543aa8fb12c914ecc9, type: 3}
+      volume: 0.2
+      pitch: 1
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Klakson1
+      clip: {fileID: 8300000, guid: ffc757622d5cd4148a411055f1be20a3, type: 3}
+      volume: 0.2
+      pitch: 1
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Klakson2
+      clip: {fileID: 8300000, guid: f6f14af444ed54f44bbc2f819cb9630d, type: 3}
+      volume: 0.2
+      pitch: 1
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: ButtonHit
+      clip: {fileID: 8300000, guid: 95177c4158f102e4ba2eddaeb4fd86cf, type: 3}
+      volume: 0.6
+      pitch: 0.26
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: ButtonBack
+      clip: {fileID: 8300000, guid: e09b5c98b122d594ba036ea918930198, type: 3}
+      volume: 0.6
+      pitch: 1
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Nangis
+      clip: {fileID: 8300000, guid: eec31b692b408c944a3e40d22729fe1c, type: 3}
+      volume: 0.18
+      pitch: 1.6
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Ngamuk0
+      clip: {fileID: 8300000, guid: f904dbdb16f96f8498c1973db88dd7ca, type: 3}
+      volume: 1
+      pitch: 1.2
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Ngamuk1
+      clip: {fileID: 8300000, guid: b0ee3c6fd06c07d46b4ab46299045354, type: 3}
+      volume: 1
+      pitch: 1.2
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Ngamuk2
+      clip: {fileID: 8300000, guid: 57a93030924e808468c153de1444bd4e, type: 3}
+      volume: 1
+      pitch: 1.2
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Pick0
+      clip: {fileID: 8300000, guid: 48a8b64907291f6408d54f1e9e249853, type: 3}
+      volume: 0.5
+      pitch: 1.2
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Pick1
+      clip: {fileID: 8300000, guid: fb4ff06eaa4884b4689fed0c9f19ca31, type: 3}
+      volume: 0.5
+      pitch: 1.2
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: Peluit
+      clip: {fileID: 8300000, guid: 811946277223693478b86ab073ce149f, type: 3}
+      volume: 0.5
+      pitch: 1
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: StartScreen
+      clip: {fileID: 8300000, guid: c336dd3d24b853d49944640351fe39c8, type: 3}
+      volume: 1
+      pitch: 2
+      loop: 0
+      audioSource: {fileID: 0}
+    - name: WalkPlayer
+      clip: {fileID: 8300000, guid: 3112cd0e5a3674f48b95074cf05207ca, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      audioSource: {fileID: 0}
+    backgroundMusics:
+    - name: Gameplay
+      clip: {fileID: 8300000, guid: 514c4c8bfc2f40547a3611d834d78c07, type: 3}
+      volume: 0.1
+      pitch: 1
+      loop: 1
+      audioSource: {fileID: 0}
+    - name: Menu
+      clip: {fileID: 8300000, guid: 74719b1611b3ed14e94e70e2404d71ac, type: 3}
+      volume: 0.2
+      pitch: 1
+      loop: 1
+      audioSource: {fileID: 0}
     activeSfx: []
     activeBgm: []
   userScoreDB:
     results: []
   currentUserSessionID: 
-  loadedTextFileName: 
-  wordsDictionary: []
+  lastUsername: 
+  lastScore: 0

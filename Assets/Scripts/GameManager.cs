@@ -199,6 +199,19 @@ public class GameManager : MonoBehaviour
         sfx.audioSource.Play();
     }
 
+    public void PlaySfxRandom(string name, int maxRandom)
+    {
+        name += UnityEngine.Random.Range(0, maxRandom);
+        Sound sfx = Array.Find(audio.soundEffects, sound => sound.name == name);
+        if (sfx == null)
+        {
+            print("Audio " + name + " not found!!");
+            return;
+        }
+
+        sfx.audioSource.Play();
+    }
+
     public void PlayBgm(string name)
     {
         Sound bgm = Array.Find(audio.backgroundMusics, sound => sound.name == name);

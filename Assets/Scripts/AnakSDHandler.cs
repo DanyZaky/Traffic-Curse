@@ -32,10 +32,16 @@ public class AnakSDHandler : MonoBehaviour
         }
         else
         {
-            if (Random.Range(0, 10) <= 3)
+            if (Random.Range(0, 10) <= 1)
             {
-
+                isSad = true;
+                GameManager.Instance.PlaySfx("Nangis");
             }
+            else if(Random.Range(0, 10) >= 6)
+            {
+                GameManager.Instance.PlaySfxRandom("AnakKecil", 3);
+            }
+            sadCounterChance = 8;
         }
 
         if (isSad)
