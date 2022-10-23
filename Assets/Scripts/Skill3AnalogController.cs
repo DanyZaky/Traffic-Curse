@@ -43,7 +43,7 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         if (currentCd > 0)
         {
             currentCd -= Time.deltaTime;
-            cooldownImg.fillAmount = 1 - (currentCd / PlayerTechTreeSkillManager.Instance.skill3Cd);
+            cooldownImg.fillAmount = (currentCd / PlayerTechTreeSkillManager.Instance.skill3Cd);
         }
     }
 
@@ -82,11 +82,18 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         if (currentCd > 0) return;
         if (!PlayerTechTreeSkillManager.Instance.isAbilityCanceled)
         {
-            InitiateSkill3Effects();
+            if (allTargetAllWithinArea.Count != 0)
+            {
+                InitiateSkill3Effects();
+            }
+            else
+            {
+                GameplaySceneController.Instance.ShowPromptMessage("No Target!");
+            }
         }
         else
         {
-            print("Skill Canceled");
+            GameplaySceneController.Instance.ShowPromptMessage("Skill Cancelled!");
         }
 
         visualCircleRadius.SetActive(false);
@@ -96,7 +103,7 @@ public class Skill3AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     private void InitiateSkill3Effects()
     {
         currentCd = PlayerTechTreeSkillManager.Instance.skill3Cd;
-        cooldownImg.fillAmount = 1;
+        cooldownImg.fillAmount = 0;
 
         if (PlayerTechTreeSkillManager.Instance.skill3AreaType == PlayerTechTreeSkillManager.SkillType.B)
         {

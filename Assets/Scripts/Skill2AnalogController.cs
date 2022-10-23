@@ -37,7 +37,7 @@ public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         if (currentCd > 0)
         {
             currentCd -= Time.deltaTime;
-            cooldownImg.fillAmount = 1 - (currentCd / PlayerTechTreeSkillManager.Instance.skill2Cd);
+            cooldownImg.fillAmount = (currentCd / PlayerTechTreeSkillManager.Instance.skill2Cd);
         }
     }
 
@@ -76,11 +76,19 @@ public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         if (currentCd > 0) return;
         if (!PlayerTechTreeSkillManager.Instance.isAbilityCanceled)
         {
-            InitiateSkill2Effects();
+            if (allTargetAllWithinArea.Count != 0)
+            {
+                InitiateSkill2Effects();
+            }
+            else
+            {
+                GameplaySceneController.Instance.ShowPromptMessage("No Target!");
+            }
+            
         }
         else
         {
-            print("Skill Canceled");
+            GameplaySceneController.Instance.ShowPromptMessage("Skill Cancelled!");
         }
         
         visualCircleRadius.SetActive(false);
@@ -90,7 +98,7 @@ public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
     private void InitiateSkill2Effects()
     {
         currentCd = PlayerTechTreeSkillManager.Instance.skill2Cd;
-        cooldownImg.fillAmount = 1;
+        cooldownImg.fillAmount = 0;
 
         if (PlayerTechTreeSkillManager.Instance.skill2AreaType == PlayerTechTreeSkillManager.SkillType.A) 
         {
@@ -111,7 +119,11 @@ public class Skill2AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         {
             foreach (var item in allTargetAllWithinArea)
             {
-                item.gameObject.AddComponent<Skill2Effect>();
+                if (item.gameObject.TryGetComponent(out Skill2Effect skill2EffectOnKid))
+                {
+                    skill2EffectOnKid.currentDuration = PlayerTechTreeSkillManager.Instance.skill2Duration;
+                }
+                else item.gameObject.AddComponent<Skill2Effect>();
             }
         }        
     }

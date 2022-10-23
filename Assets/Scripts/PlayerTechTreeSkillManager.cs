@@ -9,6 +9,7 @@ public class PlayerTechTreeSkillManager : MonoBehaviour
     public static PlayerTechTreeSkillManager Instance { get; set; }
 
     public GameObject cancelButton;
+    public GameObject[] skillButtons;
     public bool isAbilityCanceled, isDashing;
     public int skillPoint = 99;
     public float skill1Cd = 3, skill1DashPower = 2, skill1DashDuration = 0.2f, skill1MaxStack = 0, skill1CurrentStacks = 0;
@@ -21,6 +22,14 @@ public class PlayerTechTreeSkillManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(this);
+    }
+
+    private void Start()
+    {
+        foreach (var item in skillButtons)
+        {
+            item.SetActive(false);
+        }
     }
 
     public void OpenSkillCancelButton()

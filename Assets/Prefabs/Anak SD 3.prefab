@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 8304112599493421624}
   - component: {fileID: 8304112599493421625}
   - component: {fileID: 8304112599493421622}
+  - component: {fileID: 3933941902741212571}
   - component: {fileID: 8304112599493421619}
   - component: {fileID: 8304112599493421620}
   - component: {fileID: 8304112599493421621}
-  - component: {fileID: 3933941902741212571}
+  - component: {fileID: 4357104251836488771}
   m_Layer: 8
   m_Name: Anak SD 3
   m_TagString: Grab
@@ -78,6 +79,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &3933941902741212571
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8304112599493421626}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 3c0fc5bf53863514aa8d936736756f91, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.038476218, y: 0.08147576}
+  m_Size: {x: 0.7670645, y: 0.5316868}
+  m_Direction: 1
 --- !u!114 &8304112599493421619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,22 +253,22 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   delay: 5
---- !u!70 &3933941902741212571
-CapsuleCollider2D:
+--- !u!114 &4357104251836488771
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8304112599493421626}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3c0fc5bf53863514aa8d936736756f91, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.038476218, y: 0.08147576}
-  m_Size: {x: 0.7670645, y: 0.5316868}
-  m_Direction: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c107a9f1c4fd45b41892bf8bda75f3b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sadVfxPrefab: {fileID: 8095816722973815148, guid: a5cc20b3e71b8f54b9dae4d8f58eb48f, type: 3}
+  fightVfxPrefab: {fileID: 0}
+  isFighting: 0
+  isSad: 0
 --- !u!1 &8304112600346205465
 GameObject:
   m_ObjectHideFlags: 0

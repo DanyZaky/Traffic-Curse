@@ -16,8 +16,11 @@ public class GameCondition : MonoBehaviour
     public TextMeshProUGUI scoreText, finalScoreText, usernameText;
     public GameObject winPanel;
 
+    public bool isGameOver;
+
     [Header("Scoring")]
     public float totalScore;
+    public int countHappyKid, countSadKid, countMobileKeganggu, countMobileLolos;
     public float timeSpentMobilKeganggu;
 
     private void Awake()
@@ -38,8 +41,9 @@ public class GameCondition : MonoBehaviour
         timeLeftCounter += 1f * Time.deltaTime;
         fillTimeLeft.fillAmount = timeLeftCounter / timeLeft;
 
-        if(timeLeftCounter >= timeLeft)
+        if(timeLeftCounter >= timeLeft && !isGameOver)
         {
+            isGameOver = true;
             CalculateScore();
             fillTimeLeft.fillAmount = timeLeftCounter / timeLeft;
             winPanel.SetActive(true);
@@ -52,7 +56,24 @@ public class GameCondition : MonoBehaviour
 
     private void CalculateScore()
     {
-        totalScore += 2f * Time.deltaTime;
+        foreach (var item in GameObject.FindGameObjectsWithTag("Grab"))
+        {
+            if (item.GetComponent<AnakSDHandler>().isSad)
+            {
+                countSadKid++;
+            }
+            else
+            {
+                countHappyKid++;
+            }
+            
+        }
+
+        totalScore += countHappyKid * 8;
+        totalScore -= countSadKid * 6;
+        totalScore += countMobileLolos * 50;
+        totalScore -= countMobileKeganggu * 12;
+        totalScore -= timeSpentMobilKeganggu * 1.2f;
 
         scoreText.SetText(totalScore.ToString("0"));
     }

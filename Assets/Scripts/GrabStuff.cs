@@ -80,6 +80,7 @@ public class GrabStuff : MonoBehaviour
     {
         anakSD[0] = child;
         anakSD[0].GetComponent<Collider2D>().isTrigger = true;
+        anakSD[0].GetComponent<AnakSDHandler>().isSad = false;
         isGrabbing = true;
     }
 

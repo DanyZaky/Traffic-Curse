@@ -48,7 +48,7 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         if (currentCd > 0 && PlayerTechTreeSkillManager.Instance.skill1MaxStack == 0)
         {
             currentCd -= Time.deltaTime;
-            cooldownImg.fillAmount = 1 - (currentCd / PlayerTechTreeSkillManager.Instance.skill1Cd);
+            cooldownImg.fillAmount = (currentCd / PlayerTechTreeSkillManager.Instance.skill1Cd);
         }
         else if (PlayerTechTreeSkillManager.Instance.skill1MaxStack != 0)
         {
@@ -57,13 +57,13 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
                 if (PlayerTechTreeSkillManager.Instance.skill1CurrentStacks < PlayerTechTreeSkillManager.Instance.skill1MaxStack)
                 {
                     currentCd -= Time.deltaTime;
-                    cooldownImg.fillAmount = 1 - (currentCd / PlayerTechTreeSkillManager.Instance.skill1Cd);
+                    cooldownImg.fillAmount = (currentCd / PlayerTechTreeSkillManager.Instance.skill1Cd);
                 }                
             }
             else if (PlayerTechTreeSkillManager.Instance.skill1CurrentStacks < PlayerTechTreeSkillManager.Instance.skill1MaxStack)
             {
                 currentCd = PlayerTechTreeSkillManager.Instance.skill1Cd;
-                cooldownImg.fillAmount = 1;
+                cooldownImg.fillAmount = 0;
                 PlayerTechTreeSkillManager.Instance.skill1CurrentStacks++;
             }
 
@@ -109,7 +109,7 @@ public class Skill1AnalogController : MonoBehaviour, IPointerUpHandler, IPointer
         if (PlayerTechTreeSkillManager.Instance.skill1MaxStack == 0)
         {
             currentCd = PlayerTechTreeSkillManager.Instance.skill1Cd;
-            cooldownImg.fillAmount = 1;
+            cooldownImg.fillAmount = 0;
         }
         else if (PlayerTechTreeSkillManager.Instance.skill1CurrentStacks > 0)
         {

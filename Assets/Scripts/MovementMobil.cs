@@ -9,8 +9,8 @@ public class MovementMobil : MonoBehaviour
     public Vector3[] pathMobil;
     public int pathIndex = 0;
 
-    private bool isFeel;
-    private float timeFeel = 3, timeFeelCounter;
+    private bool isFeel, isAnnoyed;
+    private float timeFeel = 1, timeFeelCounter;
 
     public GameObject feel;
     private GameCondition gc;
@@ -29,15 +29,24 @@ public class MovementMobil : MonoBehaviour
 
         if(isFeel == true)
         {
+            
             timeFeelCounter -= 1f * Time.deltaTime;
-            gc.totalScore -= 4f * Time.deltaTime;
+            //gc.totalScore -= 4f * Time.deltaTime;
+            gc.timeSpentMobilKeganggu += Time.deltaTime;
             feel.SetActive(true);
 
             if (timeFeelCounter < 0)
             {
+                
                 isFeel = false;
                 timeFeelCounter = timeFeel;
                 feel.SetActive(false);
+            }
+
+            if (!isAnnoyed)
+            {
+                gc.countMobileKeganggu++;
+                isAnnoyed = true;
             }
         }
     }
@@ -53,14 +62,18 @@ public class MovementMobil : MonoBehaviour
         {
             pathIndex++;
 
-            if (pathIndex == pathMobil.Length) Destroy(gameObject);
+            if (pathIndex == pathMobil.Length) 
+            {
+                Destroy(gameObject);
+                if (!isAnnoyed) gc.countMobileLolos++;
+            }
         }
         
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "Grab")
+        if(col.gameObject.CompareTag("Grab"))
         {
             isFeel = true;
         }
