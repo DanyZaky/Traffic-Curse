@@ -12,7 +12,7 @@ public class MovementMobil : MonoBehaviour
     private bool isFeel, isAnnoyed;
     private float timeFeel = 1, timeFeelCounter;
 
-    public GameObject feel;
+    public GameObject feel, variasiKiriKanan, variasiAtasBawah;
     private GameCondition gc;
     private float cdKlakson;
     void Start()
@@ -62,6 +62,16 @@ public class MovementMobil : MonoBehaviour
         //transform.position = Vector3.MoveTowards(transform.position, new Vector3(targetX, targetY, 0f), speedms * Time.deltaTime);
         if (Vector3.Distance(transform.position, pathMobil[pathIndex]) > 0)
         {
+            if (pathIndex == 1)
+            {
+                variasiAtasBawah.SetActive(true);
+                variasiKiriKanan.SetActive(false);
+            }
+            else
+            {
+                variasiAtasBawah.SetActive(false);
+                variasiKiriKanan.SetActive(true);
+            }
             transform.position = Vector3.MoveTowards(transform.position, pathMobil[pathIndex], speedms * Time.deltaTime);
         }
         else

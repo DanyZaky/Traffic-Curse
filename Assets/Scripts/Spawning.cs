@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawning : MonoBehaviour
 {
     public GameObject[] anakSD;
-    public GameObject mobilKanan, mobilKiri;
+    public GameObject mobilKanan, mobilKiri, motorKanan, motorKiri;
     public Transform[] spawnLocation;
     public Transform spawnMobilKanan, spawnMobilKiri;
 
@@ -50,7 +50,15 @@ public class Spawning : MonoBehaviour
 
         if(_spawnDelayMobilKananCounter < 0)
         {
-            Instantiate(mobilKanan, spawnMobilKanan.position, Quaternion.identity);
+            if (Random.Range(0, 2) == 1)
+            {
+                Instantiate(mobilKanan, spawnMobilKanan.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(motorKanan, spawnMobilKanan.position, Quaternion.identity);
+            }
+            
             _spawnDelayMobilKananCounter = Random.Range(spawnDelayMobil1 * 0.8f, spawnDelayMobil1 * 1.2f);
         }
 
@@ -58,7 +66,14 @@ public class Spawning : MonoBehaviour
 
         if (_spawnDelayMobil2Counter < 0)
         {
-            Instantiate(mobilKiri, spawnMobilKiri.position, Quaternion.identity);
+            if (Random.Range(0, 2) == 1)
+            {
+                Instantiate(mobilKiri, spawnMobilKiri.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(motorKiri, spawnMobilKiri.position, Quaternion.identity);
+            }
             _spawnDelayMobil2Counter = Random.Range(spawnDelayMobil2 * 0.8f, spawnDelayMobil2 * 1.2f);
         }
     }

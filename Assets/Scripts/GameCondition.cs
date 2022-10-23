@@ -13,7 +13,7 @@ public class GameCondition : MonoBehaviour
     public float timeLeftCounter;
     
     public Image fillTimeLeft;
-    public TextMeshProUGUI scoreText, finalScoreText, usernameText;
+    public TextMeshProUGUI scoreText, finalScoreText, usernameText, localHighScore;
     public GameObject winPanel;
 
     public bool isGameOver;
@@ -21,7 +21,7 @@ public class GameCondition : MonoBehaviour
     [HideInInspector] public int childPickCount, childCalmed;
 
     
-    public TextMeshProUGUI happyKids, sadKids, happyDriver, distractedDriver, timeSpentDistractedDriver;
+    public TextMeshProUGUI happyKids, sadKids, happyDriver, distractedDriver, timeSpentDistractedDriver, calmedKids;
     public TMP_InputField inputField;
     public Button menu, newDay;
     [Header("Scoring")]
@@ -86,19 +86,33 @@ public class GameCondition : MonoBehaviour
             
         }
 
-        totalScore += countHappyKid * 8;
-        totalScore -= countSadKid * 6;
-        totalScore += countMobileLolos * 50;
-        totalScore -= countMobileKeganggu * 12;
+        totalScore += countHappyKid * 12;
+        totalScore -= countSadKid * 2;
+        totalScore += countMobileLolos * 80;
+        totalScore -= countMobileKeganggu * 4;
         totalScore -= timeSpentMobilKeganggu * 1.2f;
+        totalScore += childCalmed * 3;
 
         happyKids.text = countHappyKid.ToString("n0");
         sadKids.text = countSadKid.ToString("n0");
         happyDriver.text = countMobileLolos.ToString("n0");
         distractedDriver.text = countMobileKeganggu.ToString("n0");
         timeSpentDistractedDriver.text = timeSpentMobilKeganggu.ToString("n0");
+        calmedKids.text = childCalmed.ToString("n0");
 
         scoreText.SetText(totalScore.ToString("0"));
+
+        if (PlayerPrefs.GetFloat("LOCAL_HIGHSCORE") < totalScore)
+        {
+            PlayerPrefs.SetFloat("LOCAL_HIGHSCORE", totalScore);
+            localHighScore.SetText("Best: " + totalScore.ToString("0"));
+        }
+        else
+        {
+            localHighScore.SetText("Best: " + PlayerPrefs.GetFloat("LOCAL_HIGHSCORE").ToString("0"));
+        }
+
+        
     }
 
     public void Restart()
