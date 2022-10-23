@@ -47,25 +47,25 @@ MonoBehaviour:
     soundEffects:
     - name: AnakKecil0
       clip: {fileID: 8300000, guid: ea2f6dc96bf868e49b1b56c8185db793, type: 3}
-      volume: 0.18
+      volume: 0.36
       pitch: 1.2
       loop: 0
       audioSource: {fileID: 0}
     - name: AnakKecil1
       clip: {fileID: 8300000, guid: 18dfa5a47095c794a8dfb5d897b9fe88, type: 3}
-      volume: 0.18
+      volume: 0.36
       pitch: 1.2
       loop: 0
       audioSource: {fileID: 0}
     - name: AnakKecil2
       clip: {fileID: 8300000, guid: 13f4836b6a0276541bb2655663c27254, type: 3}
-      volume: 0.18
+      volume: 0.36
       pitch: 1.2
       loop: 0
       audioSource: {fileID: 0}
     - name: Bell
       clip: {fileID: 8300000, guid: cdc69206bea361e46a23dacc3fc055c1, type: 3}
-      volume: 0.3
+      volume: 0.2
       pitch: 1
       loop: 0
       audioSource: {fileID: 0}
@@ -101,31 +101,31 @@ MonoBehaviour:
       audioSource: {fileID: 0}
     - name: Klakson0
       clip: {fileID: 8300000, guid: 8a503c179c3132543aa8fb12c914ecc9, type: 3}
-      volume: 0.2
+      volume: 0.13
       pitch: 1
       loop: 0
       audioSource: {fileID: 0}
     - name: Klakson1
       clip: {fileID: 8300000, guid: ffc757622d5cd4148a411055f1be20a3, type: 3}
-      volume: 0.2
+      volume: 0.13
       pitch: 1
       loop: 0
       audioSource: {fileID: 0}
     - name: Klakson2
       clip: {fileID: 8300000, guid: f6f14af444ed54f44bbc2f819cb9630d, type: 3}
-      volume: 0.2
+      volume: 0.13
       pitch: 1
       loop: 0
       audioSource: {fileID: 0}
     - name: ButtonHit
       clip: {fileID: 8300000, guid: 95177c4158f102e4ba2eddaeb4fd86cf, type: 3}
-      volume: 0.6
+      volume: 0.8
       pitch: 0.26
       loop: 0
       audioSource: {fileID: 0}
     - name: ButtonBack
       clip: {fileID: 8300000, guid: e09b5c98b122d594ba036ea918930198, type: 3}
-      volume: 0.6
+      volume: 0.7
       pitch: 1
       loop: 0
       audioSource: {fileID: 0}
@@ -173,7 +173,7 @@ MonoBehaviour:
       audioSource: {fileID: 0}
     - name: StartScreen
       clip: {fileID: 8300000, guid: c336dd3d24b853d49944640351fe39c8, type: 3}
-      volume: 1
+      volume: 0.8
       pitch: 2
       loop: 0
       audioSource: {fileID: 0}

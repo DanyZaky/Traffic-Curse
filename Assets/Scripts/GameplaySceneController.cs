@@ -37,4 +37,14 @@ public class GameplaySceneController : UIController
         promptMsg.transform.DOMoveY(promptMsg.transform.position.y + 25, 1);
         Destroy(promptMsg, 1.2f);
     }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void UnpauseGame()
+    {
+        Time.timeScale = 1f;
+    }
 }

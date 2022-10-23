@@ -86,12 +86,12 @@ public class GameCondition : MonoBehaviour
             
         }
 
-        totalScore += countHappyKid * 12;
+        totalScore += countHappyKid * 16;
         totalScore -= countSadKid * 2;
         totalScore += countMobileLolos * 80;
-        totalScore -= countMobileKeganggu * 4;
-        totalScore -= timeSpentMobilKeganggu * 1.2f;
-        totalScore += childCalmed * 3;
+        totalScore -= countMobileKeganggu * 3;
+        totalScore -= timeSpentMobilKeganggu * 0.76f;
+        totalScore += childCalmed * 4;
 
         happyKids.text = countHappyKid.ToString("n0");
         sadKids.text = countSadKid.ToString("n0");
