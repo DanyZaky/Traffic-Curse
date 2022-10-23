@@ -16432,7 +16432,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686678793}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 747deaa22f8d49444a3351950bb4ef9c, type: 3}
   m_Name: 
@@ -16638,13 +16638,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686678793}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc22a038ec3ea7c4ab7c37c2d62c557f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
+  _moveSpeed: 7.6
   _joystick: {fileID: 1621931452}
+  anim: {fileID: 1686678798}
 --- !u!96 &1686678804
 TrailRenderer:
   serializedVersion: 2
