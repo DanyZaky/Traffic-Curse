@@ -15,7 +15,7 @@ TagManager:
   - Background
   - Foreground
   - Grab
-  - 
+  - Pagar
   - 
   - 
   - 
@@ -56,4 +56,7 @@ TagManager:
     locked: 0
   - name: Topground
     uniqueID: 2736422731
+    locked: 0
+  - name: Pagar
+    uniqueID: 3930523195
     locked: 0

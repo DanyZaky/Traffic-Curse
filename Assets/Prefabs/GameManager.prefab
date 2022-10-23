@@ -173,8 +173,8 @@ MonoBehaviour:
       audioSource: {fileID: 0}
     - name: StartScreen
       clip: {fileID: 8300000, guid: c336dd3d24b853d49944640351fe39c8, type: 3}
-      volume: 0.8
-      pitch: 2
+      volume: 0.4
+      pitch: 1.04
       loop: 0
       audioSource: {fileID: 0}
     - name: WalkPlayer
