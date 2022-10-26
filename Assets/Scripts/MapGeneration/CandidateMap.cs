@@ -19,7 +19,7 @@ namespace MG.ChessMaze
         public CandidateMap(MapGrid grid, int numberOfPieces)
         {
             this.numberOfPieces = numberOfPieces;
-            this.knigtPiecesList = new List<KnightPiece>();
+            
             this.grid = grid;
         }
 
@@ -27,8 +27,11 @@ namespace MG.ChessMaze
         {
             this.startPoint = startPosition;
             this.exitPoint = exitPosition;
-
+            obstaclesArray = new bool[grid.Width * grid.Length];
+            this.knigtPiecesList = new List<KnightPiece>();
             RandomlyPlaceKnightPieces(this.numberOfPieces);
+
+            PlaceObstacles();
         }
 
         private bool CheckIfPositionCanBeObstacle(Vector3 position)
@@ -65,6 +68,37 @@ namespace MG.ChessMaze
 
                 knightPlacementTryLimit--;
             }
+        }
+
+        private void PlaceObstaclesForThisKnight(KnightPiece knight)
+        {
+            foreach (var position in KnightPiece.listOfPosssibleMoves)
+            {
+                var newPosition = knight.Position + position;
+                if (grid.IsCellValid(newPosition.x, newPosition.y) && CheckIfPositionCanBeObstacle(newPosition))
+                {
+                    obstaclesArray[grid.CalculateIndexFromCoordinates(newPosition.x, newPosition.y)] = true;
+                }
+            }
+        }
+
+        private void PlaceObstacles()
+        {
+            foreach (var knight in knigtPiecesList)
+            {
+                PlaceObstaclesForThisKnight(knight);
+            }
+        }
+
+        public MapData ReturnMapData()
+        {
+            return new MapData
+            {
+                obstacleArray = this.obstaclesArray,
+                knightPiecesList = knigtPiecesList,
+                startPosition = startPoint,
+                exitPosition = exitPoint
+            };
         }
     }
 }
