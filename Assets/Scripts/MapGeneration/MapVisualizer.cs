@@ -1,5 +1,5 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace MG.ChessMaze
@@ -8,6 +8,8 @@ namespace MG.ChessMaze
     {
         private Transform parent;
         public Color startColor, exitColor;
+
+        Dictionary<Vector3, GameObject> dictionaryOfObstacles = new Dictionary<Vector3, GameObject>();
 
         private void Awake()
         {
@@ -44,7 +46,10 @@ namespace MG.ChessMaze
                         continue;
                     }
 
-                    CreateIndicator(positionOnGrid, Color.white, PrimitiveType.Cube);
+                    if(dictionaryOfObstacles.ContainsKey(positionOnGrid) == false)
+                    {
+                        CreateIndicator(positionOnGrid, Color.white, PrimitiveType.Cube);
+                    }
                 }
             }
         }
@@ -71,10 +76,20 @@ namespace MG.ChessMaze
         private void CreateIndicator(Vector3 position, Color color, PrimitiveType sphere)
         {
             var element = GameObject.CreatePrimitive(sphere);
-            element.transform.position = position - new Vector3(-0.5f, 2f, 2f);
+            dictionaryOfObstacles.Add(position, element);
+            element.transform.position = position - new Vector3(-.5f, 5f, 0);
             element.transform.parent = parent;
             var renderer = element.GetComponent<Renderer>();
             renderer.material.SetColor("_Color", color);
+        }
+
+        public void ClearMap()
+        {
+            foreach (var obstacle in dictionaryOfObstacles.Values)
+            {
+                Destroy(obstacle);
+            }
+            dictionaryOfObstacles.Clear();
         }
     }
 }

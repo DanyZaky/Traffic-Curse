@@ -22,9 +22,18 @@ namespace MG.ChessMaze
 
         private void Start()
         {
-            grid = new MapGrid(width, length);
             gridVisualizer.VisualizeGrid(width, length);
+            GenerateNewMap();
+        }
+
+        public void GenerateNewMap()
+        {
+            mapVisualizer.ClearMap();
+
+            grid = new MapGrid(width, length);
+
             MapHelper.RandomlyChooseAndSetStartAndExit(grid, ref startPosition, ref exitPosition, randomPlacement, startEdge, exitEdge);
+
             CandidateMap map = new CandidateMap(grid, numberOfPieces);
             map.CreateMap(startPosition, exitPosition);
             mapVisualizer.VisualizeMap(grid, map.ReturnMapData(), false);

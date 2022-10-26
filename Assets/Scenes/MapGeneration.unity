@@ -326,12 +326,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridVisualizer: {fileID: 451883207}
   mapVisualizer: {fileID: 57624392}
-  startEdge: 2
+  startEdge: 3
   exitEdge: 4
   randomPlacement: 0
   numberOfPieces: 5
-  width: 5
-  length: 5
+  width: 11
+  length: 11
 --- !u!4 &1528104649
 Transform:
   m_ObjectHideFlags: 0
