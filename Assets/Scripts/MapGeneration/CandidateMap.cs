@@ -1,3 +1,4 @@
+using MG.AI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace MG.ChessMaze
         private bool[] obstaclesArray = null;
         private Vector3 startPoint, exitPoint;
         private List<KnightPiece> knigtPiecesList = new List<KnightPiece>();
+        private List<Vector3> path = new List<Vector3>(0);
 
         public MapGrid Grid { get => grid; }
         public bool[] ObstaclesArray { get => obstaclesArray; }
@@ -32,6 +34,16 @@ namespace MG.ChessMaze
             RandomlyPlaceKnightPieces(this.numberOfPieces);
 
             PlaceObstacles();
+            FindPath();
+        }
+
+        private void FindPath()
+        {
+            this.path = AStar.GetPath(startPoint, exitPoint, ObstaclesArray, grid);
+            foreach (var position in this.path)
+            {
+                Debug.Log(position);
+            }
         }
 
         private bool CheckIfPositionCanBeObstacle(Vector3 position)
