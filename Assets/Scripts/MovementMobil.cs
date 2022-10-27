@@ -62,13 +62,23 @@ public class MovementMobil : MonoBehaviour
         //transform.position = Vector3.MoveTowards(transform.position, new Vector3(targetX, targetY, 0f), speedms * Time.deltaTime);
         if (Vector3.Distance(transform.position, pathMobil[pathIndex]) > 0)
         {
-            if (pathIndex == 1)
+            if (transform.position.x.Equals(pathMobil[pathIndex].x))
             {
                 variasiAtasBawah.SetActive(true);
                 variasiKiriKanan.SetActive(false);
+                if (transform.position.y > pathMobil[pathIndex].y)
+                {
+                    variasiAtasBawah.transform.rotation = new Quaternion(0, 0, 0, 0);
+                }
+                else if (transform.position.y < pathMobil[pathIndex].y)
+                {
+                    variasiAtasBawah.transform.rotation = new Quaternion(0, 0, 180, 0);
+                }
             }
+
+            
             else
-            {
+            { 
                 variasiAtasBawah.SetActive(false);
                 variasiKiriKanan.SetActive(true);
             }
@@ -85,20 +95,16 @@ public class MovementMobil : MonoBehaviour
             }
         }
         
-    }
-
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        if(col.gameObject.CompareTag("Grab"))
-        {
-            isFeel = true;
-
-            if (cdKlakson <= 0)
-            {
-                cdKlakson = 3;
-                GameManager.Instance.PlaySfxRandom("Klakson", 3);
-            }
-            
-        }
     }    
+
+    public void KenaTabrak()
+    {
+        isFeel = true;
+
+        if (cdKlakson <= 0)
+        {
+            cdKlakson = 3;
+            GameManager.Instance.PlaySfxRandom("Klakson", 3);
+        }
+    }
 }

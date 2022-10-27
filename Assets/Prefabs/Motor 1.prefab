@@ -91,13 +91,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8675751002765562836}
+  - component: {fileID: 5112431013971741166}
+  - component: {fileID: 3130424182537818802}
   m_Layer: 0
   m_Name: AtasBawah
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8675751002765562836
 Transform:
   m_ObjectHideFlags: 0
@@ -114,6 +116,46 @@ Transform:
   m_Father: {fileID: 7664765515969916286}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5112431013971741166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5242426923169582107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e92b6d7ce3afd0e4ca2c88224bebc90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  movementMobil: {fileID: 7664765515969916284}
+--- !u!61 &3130424182537818802
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5242426923169582107}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.46120042}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.3014693}
+  m_EdgeRadius: 0
 --- !u!1 &6207732258426652907
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +247,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7664765515969916286}
-  - component: {fileID: 7664765515969916285}
   - component: {fileID: 7664765515969916284}
   - component: {fileID: 39009490749544363}
   m_Layer: 0
@@ -232,32 +273,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &7664765515969916285
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7664765515969916280}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.2695129, y: -0.13572502}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.631844, y: 2.8477325}
-  m_EdgeRadius: 0
 --- !u!114 &7664765515969916284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,9 +289,9 @@ MonoBehaviour:
   targetX: -16.75
   targetY: -1.16883
   pathMobil:
-  - {x: 3.97, y: 5.5, z: 0}
-  - {x: 3.97, y: -11.85, z: 0}
-  - {x: -19.81, y: -11.85, z: 0}
+  - {x: 20.58, y: -2.21, z: 0}
+  - {x: -19.22, y: -2.21, z: 0}
+  - {x: -19.22, y: 15.97, z: 0}
   pathIndex: 0
   feel: {fileID: 3614847056800674728}
   variasiKiriKanan: {fileID: 7755178181650967737}
@@ -719,6 +734,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8462504767487113843}
+  - component: {fileID: 566509231395223060}
+  - component: {fileID: 2827607913411104979}
   m_Layer: 0
   m_Name: KananKiri
   m_TagString: Untagged
@@ -745,6 +762,46 @@ Transform:
   m_Father: {fileID: 7664765515969916286}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &566509231395223060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755178181650967737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e92b6d7ce3afd0e4ca2c88224bebc90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  movementMobil: {fileID: 7664765515969916284}
+--- !u!61 &2827607913411104979
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755178181650967737}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.04089284, y: -0.04907155}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.8156471, y: 2.1122882}
+  m_EdgeRadius: 0
 --- !u!1 &8799750154032570161
 GameObject:
   m_ObjectHideFlags: 0
