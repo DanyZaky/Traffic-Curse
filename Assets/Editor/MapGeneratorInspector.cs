@@ -24,6 +24,11 @@ namespace MG.ChessMaze
                 {
                     map.GenerateNewMap();
                 }
+
+                if (GUILayout.Button("Repair map"))
+                {
+                    map.TryRepair();
+                }
             }
         }
     }

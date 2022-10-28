@@ -329,9 +329,9 @@ MonoBehaviour:
   startEdge: 3
   exitEdge: 4
   randomPlacement: 0
-  numberOfPieces: 5
-  width: 11
-  length: 11
+  numberOfPieces: 4
+  width: 5
+  length: 5
 --- !u!4 &1528104649
 Transform:
   m_ObjectHideFlags: 0

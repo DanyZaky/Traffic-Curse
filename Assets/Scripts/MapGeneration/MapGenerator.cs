@@ -15,6 +15,7 @@ namespace MG.ChessMaze
         public int numberOfPieces;
 
         private Vector3 startPosition, exitPosition;
+        private CandidateMap map;
 
         [Range(3,20)]
         public int width, length = 11;
@@ -34,9 +35,23 @@ namespace MG.ChessMaze
 
             MapHelper.RandomlyChooseAndSetStartAndExit(grid, ref startPosition, ref exitPosition, randomPlacement, startEdge, exitEdge);
 
-            CandidateMap map = new CandidateMap(grid, numberOfPieces);
+            map = new CandidateMap(grid, numberOfPieces);
             map.CreateMap(startPosition, exitPosition);
             mapVisualizer.VisualizeMap(grid, map.ReturnMapData(), false);
+        }
+
+        public void TryRepair()
+        {
+            if(map != null)
+            {
+                var listOfObstacleToRemove = map.Repair();
+                if(listOfObstacleToRemove.Count > 0)
+                {
+                    mapVisualizer.ClearMap();
+                    mapVisualizer.VisualizeMap(grid, map.ReturnMapData(), false);
+                }
+
+            }
         }
     }
 }

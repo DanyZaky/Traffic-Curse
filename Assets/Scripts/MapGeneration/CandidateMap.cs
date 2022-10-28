@@ -1,6 +1,7 @@
 using MG.AI;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -35,6 +36,11 @@ namespace MG.ChessMaze
 
             PlaceObstacles();
             FindPath();
+
+            if(autoRepair)
+            {
+                Repair();
+            }
         }
 
         private void FindPath()
@@ -111,6 +117,44 @@ namespace MG.ChessMaze
                 startPosition = startPoint,
                 exitPosition = exitPoint
             };
+        }
+
+        public List<Vector3> Repair()
+        {
+            int numberOfObstacles = obstaclesArray.Where(obstacle => obstacle).Count();
+            List<Vector3> listObstaclesToRemove = new List<Vector3>();
+            if (path.Count <= 0)
+            {
+                do
+                {
+                    int obstacleIndexToRemove = Random.Range(0, numberOfObstacles);
+                    for (int i = 0; i < obstaclesArray.Length; i++)
+                    {
+                        if(obstaclesArray[i])
+                        {
+                            if(obstacleIndexToRemove == 0)
+                            {
+                                obstaclesArray[i] = false;
+                                listObstaclesToRemove.Add(grid.CalculateIndexFromCoordinates(i));
+                                break;
+                            }
+                            obstacleIndexToRemove--;
+                        }
+                    }
+                    
+                    FindPath();
+                } while (this.path.Count <= 0);
+            }
+            foreach (var obstaclePosition in listObstaclesToRemove)
+            {
+                if(path.Contains(obstaclePosition) == false)
+                {
+                    int index = grid.CalculateIndexFromCoordinates(obstaclePosition.y, obstaclePosition.z);
+                    obstaclesArray[index] = true;
+                }
+            }
+
+            return listObstaclesToRemove;
         }
     }
 }
