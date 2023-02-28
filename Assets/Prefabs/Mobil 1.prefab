@@ -154,7 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92b6d7ce3afd0e4ca2c88224bebc90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
   movementMobil: {fileID: 7664765515969916284}
 --- !u!1 &6207732258426652907
 GameObject:
@@ -290,9 +289,9 @@ MonoBehaviour:
   targetX: -16.75
   targetY: -1.16883
   pathMobil:
-  - {x: 20.58, y: -2.21, z: 0}
-  - {x: -19.22, y: -2.21, z: 0}
-  - {x: -19.22, y: 15.97, z: 0}
+  - {x: 3.68, y: 5.66, z: 0}
+  - {x: 3.68, y: -11.66, z: 0}
+  - {x: -26.4, y: -11.66, z: 0}
   pathIndex: 0
   feel: {fileID: 3614847056800674728}
   variasiKiriKanan: {fileID: 7755178181650967737}
@@ -897,7 +896,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92b6d7ce3afd0e4ca2c88224bebc90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
   movementMobil: {fileID: 7664765515969916284}
 --- !u!1 &8799750154032570161
 GameObject:
